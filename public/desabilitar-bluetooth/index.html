@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.74.3" />
+  
+  <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
+
+  
+  
+  <title>Desabilitando o Bluetooth na inicialização do Debian | Danilo Arantes</title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+    
+    
+    <a href="/blog/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
+  
+
+</nav>
+
+      <main id="main">
+      
+        <article class="post">
+          <header>
+            <h1 class="titulo-post">Desabilitando o Bluetooth na inicialização do Debian</h1>
+            
+
+<p id="tags">
+<i data-feather="calendar"></i> <time datetime="2018-03-06">Mar 6, 2018</time>
+
+
+
+  <i id="icon" data-feather="tag"></i>
+
+  
+  
+  <a class="" href="https://daniloarantes.com/tags/linux">Linux</a>
+  
+
+
+<br><br>
+          </header>
+          <p>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.</p>
+<p><strong>Para sistemas com SYSTEMD</strong></p>
+<p>Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:</p>
+<p>1º - Verificar o status do Bluetooth</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status bluetooth
+</code></pre></div><p>Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
+<p>2º - Parar o serviço</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl stop bluetooth
+</code></pre></div><p>3º - Desabilitar o serviço</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl disable bluetooth
+</code></pre></div><p>Após esse procedimento o bluetooth estará desabilitado em seu sistema. Para habilitar novamente, substitua o <strong>disable</strong> do passo 3 para <strong>enable</strong> e substitua o <strong>stop</strong> so passo 2 para <strong>start</strong>.</p>
+<p><strong>Para sistemas sem SYSTEMD, siga os passos abaixo:</strong></p>
+<p>Uma maneira prática para desabilitar o bluetooth na inicialização do sistema é inserir uma simples linha no arquivo <strong>/etc/rc.local.</strong></p>
+<p><strong>Como fazer:</strong></p>
+<p>1º - Instalar o pacote rfkill</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install rfkill
+</code></pre></div><p>2º - Inserir comando dentro do arquivo <strong>/etc/rc.local</strong></p>
+<p>Utilizando seu editor preferido, abra o arquivo:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi /etc/rc.local
+</code></pre></div><p>3º - Dentro do **rc.local **insira a linha abaixo:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rfkill block bluetooth
+</code></pre></div><p>Salve e saia do arquivo.</p>
+<p>Pronto! Agora basta reiniciar o computador e verificar se funcionou corretamente.</p>
+<h3 id="referência"><strong>Referência</strong></h3>
+<p><a href="http://pseudomorph.wordpress.com/2012/01/15/disabling-bluetooth-as-default-in-debian-based-distros/">Blog Pseudomorph</a>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></p>
+
+        </article>
+  
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="https://daniloarantes.com/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>

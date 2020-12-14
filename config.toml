@@ -1,0 +1,33 @@
+baseURL = "https://daniloarantes.com"
+languageCode = "pt-br"
+title = "Danilo Arantes"
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+
+[permalinks]
+  blog = "/:filename/"
+  sobre = "/:filename/"
+
+[params]
+  dateFormat = "Jan 2, 2006"
+  homeText = "Configurando site do início"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    pre = "edit"
+    url = "/blog/"
+    weight = 1
+  [[menu.main]]
+    name = "Tags"
+    pre = "tag"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    name = "Sobre"
+    pre = "user"
+    url = "/sobre/"
+    weight = 3
+
+[taxonomies]
+  tag = "tags"

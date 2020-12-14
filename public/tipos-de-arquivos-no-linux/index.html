@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.74.3" />
+  
+  <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
+
+  
+  
+  <title>Tipos de arquivos no Linux | Danilo Arantes</title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+    
+    
+    <a href="/blog/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
+  
+
+</nav>
+
+      <main id="main">
+      
+        <article class="post">
+          <header>
+            <h1 class="titulo-post">Tipos de arquivos no Linux</h1>
+            
+
+<p id="tags">
+<i data-feather="calendar"></i> <time datetime="2017-07-05">Jul 5, 2017</time>
+
+
+
+  <i id="icon" data-feather="tag"></i>
+
+  
+  
+  <a class="" href="https://daniloarantes.com/tags/linux">Linux</a>
+  
+
+
+<br><br>
+          </header>
+          <p>No linux, um arquivo pode se subdividir em um dos seguinte stipos:</p>
+<ul>
+<li>Arquivos Comuns</li>
+<li>Diretórios</li>
+<li>Links</li>
+<li>Device Files</li>
+<li>Sockets</li>
+<li>Pipes</li>
+</ul>
+<p>Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:</p>
+<p><strong>Arquivos Comuns:</strong> Este tipo de arquivos inclui arquivos de texto ASCII e não ASCII, arquivos de texto de comando também conhecidos como shell scripts e arquivos binários executáveis.</p>
+<p><strong>Diretórios:</strong> São arquivos que contém os nomes de arquivos que estão armazenados ou organizados como um grupo. O agrupamento é arbitrário; você pode escolher a combinação desejada. Também pode alterar o agrupamento a qualquer momento.</p>
+<p><strong>Links:</strong> É um arquivo que faz referência a outro arquivo ou diretório dentro do sistema dearquivos. Isso permite a um arquivo ou diretório estar em dois ou mais lugares ao mesmo tempo, na sua localização original e no lugar referenciado pelo arquivo de link.</p>
+<p>Os arquivos de link podem ser de dois tipos: Diretos (Hard Links) ou Simbólicos (Soft Links). Os links diretos criam novos nomes para um arquivo, associando dois ou mais nomes de arquivo a um mesmo inode, e não podem ser visualizados. Os links simbólicos são arquivos que fazem referência ao arquivo original, contendo o caminho completo da arvore de diretórios até este e podem ser visualizados com o comando <em>ls -F</em> ou <em>ls -l</em>. Ambos os tipos de links são criados pelo comando <em>ln</em>.</p>
+<p><strong>Device Files (arquivos de dispositivos):</strong> São arquivos utilizados para representar dispositivos de hardware do computador. No UNIX e também no Linux tudo é um arquivo, seja um conjunto de dados, seja um arquivo de dispositivo representando um periférico do computador ( como um HD, um CD, drive, impressora, etc) ou o kernel do sistema operacional em si. Por exemplo: <em>/dev/hda, /dev/hdc, /dev/fd0.</em>. Os arquivos de dispositivo podem ser de dois tipos: de caractere ou bloco. Os dispositivos de caractere são acessados sequencialmente, um byte por vez; uma porta paralela ou serial é um dispositivo de caractere. Os dispositivos de bloco são acessados em bloco de bytes (1024 bytes por acesso); um disco rígido é um dispositivo de bloco.</p>
+<p><strong>Sockets:</strong> São arquivos utilizados para comunicação entre processos, até mesmo para processos rodando em diferentes máquinas conectadas a uma rede de computadores.</p>
+<p><strong>Pipes:</strong> São arquivos também utilizados para intercomunicação entre processos e residem também sob o diretório <em>/dev.</em></p>
+<p><strong>Referência:</strong>
+Linux -  Guia do Administrador do Sistema do autor Rubem E. Ferreira (2ªEdição)</p>
+        </article>
+  
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="https://daniloarantes.com/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>

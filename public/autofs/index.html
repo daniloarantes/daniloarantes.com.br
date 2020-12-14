@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.74.3" />
+  
+  <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
+
+  
+  
+  <title>Configurando o Automount (Autofs) | Danilo Arantes</title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+    
+    
+    <a href="/blog/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
+  
+
+</nav>
+
+      <main id="main">
+      
+        <article class="post">
+          <header>
+            <h1 class="titulo-post">Configurando o Automount (Autofs)</h1>
+            
+
+<p id="tags">
+<i data-feather="calendar"></i> <time datetime="2017-06-15">Jun 15, 2017</time>
+
+
+
+  <i id="icon" data-feather="tag"></i>
+
+  
+  
+  <a class="" href="https://daniloarantes.com/tags/linux">Linux</a>
+  
+
+
+<br><br>
+          </header>
+          <p>A montagem automática é utilizada como um sistema de montagem sob demanda.</p>
+<p>Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.</p>
+<p>Inicialmente, instale o pacote autofs:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install autofs
+</code></pre></div><p>Principal arquivo de configuração: <strong>/etc/auto.master</strong></p>
+<h2 id="configurando-automount"><strong>Configurando automount:</strong></h2>
+<p>Edite o arquivo /etc/auto.master</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/auto.master
+</code></pre></div><p>Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</p>
+<p>Essas linhas apontam para um diretório onde ficarão os arquivos de configuração (/etc/auto.master.d).</p>
+<p>Crie o diretório <em>/etc/auto.master.d</em></p>
+<p>Dentro de <em>/etc/auto.master.d</em> crie o arquivo <em>montagem.autofs</em> e dentro desse arquivo coloque o seguinte conteúdo:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Arquivos /etc/auto.montagem &amp;<span style="color:#408080;font-style:italic">#8211;timeout=10</span>
+</code></pre></div><p>Agora crie o arquivo <em>/etc/auto.montagem</em> com o conteúdo abaixo:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">montagem -fstype<span style="color:#666">=</span>xfs,rw :/dev/sdb1
+</code></pre></div><p><strong>“montagem”</strong> é o ponto de montagem para a partição <strong>/dev/sdb1</strong> que possui sistema de arquivos <strong>XFS</strong> e será permitido RW – Leitura e Escrita.</p>
+<p>O diretório “montagem” será montado dentro do diretório “/Arquivos”, portanto, crie esse diretório:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /Arquivos
+</code></pre></div><p>Reinicie o Autofs:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service autofs restart
+</code></pre></div><h1 id="testando"><strong>Testando</strong></h1>
+<p>Execute o comando abaixo para verificar os pontos de montagem:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
+</code></pre></div><p>Acesse o diretório <strong>/Arquivos/montagem</strong></p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">cd</span> /Arquivos/montagem
+</code></pre></div><p>Ao executar o comando abaixo, deverá ser exibida a partição <strong>/dev/sdb1</strong> apontando para o diretório <em>montagem</em>.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
+</code></pre></div><h3 id="referência"><strong>Referência</strong></h3>
+<p><a href="http://www.youtube.com/watch?v=sRqre0ekfMA">Autofs - Basic Configuration</a></p>
+
+        </article>
+  
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="https://daniloarantes.com/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>
