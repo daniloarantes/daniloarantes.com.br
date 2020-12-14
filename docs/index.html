@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.74.3" />
+  
+  <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
+
+  
+  
+  <title>Danilo Arantes</title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+    
+    
+    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
+  
+
+</nav>
+
+      <main id="main">
+      
+        
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/desabilitar-bluetooth/" class="titulo-post">Desabilitando o Bluetooth na inicialização do Debian</a></h2>
+          6 Mar 2018
+          </header>
+          <p>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.
+Para sistemas com SYSTEMD
+Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:
+1º - Verificar o status do Bluetooth
+systemctl status bluetooth Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/atualizando-debian-stretch-para-buster/" class="titulo-post">Atualizando Debian Stretch para Buster</a></h2>
+          23 Oct 2017
+          </header>
+          <p>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.
+Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.
+Para isso, utilizei o comando sed para modificar a versão dos repositórios no arquivo /etc/apt/sources.list :
+sed -i &#39;s/Stretch/Buster/g&#39; /etc/apt/sources.list Atenção: você pode ter algum repositório que necessite permanecer na versão Stretch.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/docker-failed-to-register-layer/" class="titulo-post">Correção de erro &#39;failed to register layer&#39; no Docker</a></h2>
+          12 Oct 2017
+          </header>
+          <p>O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.
+Em uma das aventuras, ao tentar fazer o pull de um container com Evernote, me deparei com a seguinte mensagem de erro:
+ &ldquo;failed to register layer: symlink&hellip;&rdquo;
+ E eu não conseguia finalizar o processo de forma alguma.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/ipv4ipv6/" class="titulo-post">Um pouco sobre IPv4 e IPv6</a></h2>
+          14 Aug 2017
+          </header>
+          <p>IPv4 A dificuldade atual do IPv4 é a limitação dos endereços de IP. O grande problema é que os endereços são sempre divididos em duas partes: Rede e Host.
+Nos endereços de classe A, o primeiro octeto se refere à Rede e os três octetos seguintes referem-se ao Host.
+Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a governos, instituições e até mesmo algumas empresas privadas, como por exemplo, a IBM.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/tipos-de-arquivos-no-linux/" class="titulo-post">Tipos de arquivos no Linux</a></h2>
+          5 Jul 2017
+          </header>
+          <p><p>No linux, um arquivo pode se subdividir em um dos seguinte stipos:</p>
+<ul>
+<li>Arquivos Comuns</li>
+<li>Diretórios</li>
+<li>Links</li>
+<li>Device Files</li>
+<li>Sockets</li>
+<li>Pipes</li>
+</ul>
+<p>Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:</p></p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/compiladores-e-interpretadores/" class="titulo-post">Compiladores e Interpretadores</a></h2>
+          27 Jun 2017
+          </header>
+          <p>A maneira de se comunicar com um computador chama-se programa e a única linguagem que o computador entende chama-se linguagem de máquina. Portanto todos os programas que se comunicam com a máquina devem estar em linguagem de máquina.
+A forma como os programas são traduzidos para a linguagem de máquina classifica-os em duas categorias:
+ Interpretados Compilados  Os programas que fazem estas traduções são chamados interpretadores e Compiladores.
+INTERPRETADORES Um interpretador lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro converte-a para linguagem de máquina para finalmente executá-la.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/cluster-de-computadores/" class="titulo-post">O que é um Cluster de Computadores?</a></h2>
+          19 Jun 2017
+          </header>
+          <p>Este é o trecho de um artigo meu sobre Redundância e Replicação de dados utilizando MySQL e MySQL Cluster. O desenvolvimento do artigo foi baseado em um cluster responsável pelo gerenciamento do banco de dados - em outro post falarei mais sobre esse trabalho com exemplo e aplicação prática.
+Cluster – Conceito Os clusters podem ser utilizados em diversas aplicações, como por exemplo, renderização de efeitos especiais, meteorologia, simulações, etc.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/autofs/" class="titulo-post">Configurando o Automount (Autofs)</a></h2>
+          15 Jun 2017
+          </header>
+          <p>A montagem automática é utilizada como um sistema de montagem sob demanda.
+Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.
+Inicialmente, instale o pacote autofs:
+apt-get install autofs Principal arquivo de configuração: /etc/auto.master
+Configurando automount: Edite o arquivo /etc/auto.master
+vim /etc/auto.master Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</p>
+        </article>
+
+
+  
+        <article class="post">
+          <header>
+            <h2><a href="https://daniloarantes.com/post/cpio/" class="titulo-post">Criando Arquivamentos com CPIO</a></h2>
+          15 Jun 2017
+          </header>
+          <p>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.
+Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.
+Com este comando, várias atividades são facilitadas, como por exemplo:
+ Copiar arquivos para um arquivamento; Extrair arquivos de um arquivamento; Copiar arquivos para outra estrutura de diretórios.  Alguns parâmetros utilizados com o CPIO:
+ -i - Extrair backup -o - Cria backup -t - Mostra o conteúdo do backup -F - Especifica o arquivo de Backup -d - Cria diretórios se necessário -v - Modo Verboso – Mostra na tela as ações -p - Ativa o modo de cópia  Criando cenário para teste: Execute os comandos abaixo para criar o cenário que será utilizado para teste:</p>
+        </article>
+
+
+  
+
+        
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="https://daniloarantes.com/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>
