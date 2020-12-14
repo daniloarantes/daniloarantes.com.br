@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Danilo Arantes</title>
-    <link>https://daniloarantes.com/blog/</link>
+    <link>https://daniloarantes.com/post/</link>
     <description>Recent content on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <lastBuildDate>Tue, 06 Mar 2018 11:02:07 -0300</lastBuildDate>
     
-	<atom:link href="https://daniloarantes.com/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://daniloarantes.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Desabilitando o Bluetooth na inicialização do Debian</title>
-      <link>https://daniloarantes.com/desabilitar-bluetooth/</link>
+      <link>https://daniloarantes.com/post/desabilitar-bluetooth/</link>
       <pubDate>Tue, 06 Mar 2018 11:02:07 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/desabilitar-bluetooth/</guid>
+      <guid>https://daniloarantes.com/post/desabilitar-bluetooth/</guid>
       <description>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.
 Para sistemas com SYSTEMD
 Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:
@@ -26,10 +26,10 @@ systemctl status bluetooth Serão retornadas mensagens sobre o status de funcion
     
     <item>
       <title>Atualizando Debian Stretch para Buster</title>
-      <link>https://daniloarantes.com/atualizando-debian-stretch-para-buster/</link>
+      <link>https://daniloarantes.com/post/atualizando-debian-stretch-para-buster/</link>
       <pubDate>Mon, 23 Oct 2017 17:00:00 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/atualizando-debian-stretch-para-buster/</guid>
+      <guid>https://daniloarantes.com/post/atualizando-debian-stretch-para-buster/</guid>
       <description>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.
 Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.
 Para isso, utilizei o comando sed para modificar a versão dos repositórios no arquivo /etc/apt/sources.list :
@@ -38,10 +38,10 @@ sed -i &amp;#39;s/Stretch/Buster/g&amp;#39; /etc/apt/sources.list Atenção: voc
     
     <item>
       <title>Correção de erro &#39;failed to register layer&#39; no Docker</title>
-      <link>https://daniloarantes.com/docker-failed-to-register-layer/</link>
+      <link>https://daniloarantes.com/post/docker-failed-to-register-layer/</link>
       <pubDate>Thu, 12 Oct 2017 18:02:42 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/docker-failed-to-register-layer/</guid>
+      <guid>https://daniloarantes.com/post/docker-failed-to-register-layer/</guid>
       <description>O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.
 Em uma das aventuras, ao tentar fazer o pull de um container com Evernote, me deparei com a seguinte mensagem de erro:
  &amp;ldquo;failed to register layer: symlink&amp;hellip;&amp;rdquo;
@@ -50,10 +50,10 @@ Em uma das aventuras, ao tentar fazer o pull de um container com Evernote, me de
     
     <item>
       <title>Um pouco sobre IPv4 e IPv6</title>
-      <link>https://daniloarantes.com/ipv4ipv6/</link>
+      <link>https://daniloarantes.com/post/ipv4ipv6/</link>
       <pubDate>Mon, 14 Aug 2017 14:32:42 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/ipv4ipv6/</guid>
+      <guid>https://daniloarantes.com/post/ipv4ipv6/</guid>
       <description>IPv4 A dificuldade atual do IPv4 é a limitação dos endereços de IP. O grande problema é que os endereços são sempre divididos em duas partes: Rede e Host.
 Nos endereços de classe A, o primeiro octeto se refere à Rede e os três octetos seguintes referem-se ao Host.
 Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a governos, instituições e até mesmo algumas empresas privadas, como por exemplo, a IBM.</description>
@@ -61,10 +61,10 @@ Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a go
     
     <item>
       <title>Tipos de arquivos no Linux</title>
-      <link>https://daniloarantes.com/tipos-de-arquivos-no-linux/</link>
+      <link>https://daniloarantes.com/post/tipos-de-arquivos-no-linux/</link>
       <pubDate>Wed, 05 Jul 2017 11:06:12 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/tipos-de-arquivos-no-linux/</guid>
+      <guid>https://daniloarantes.com/post/tipos-de-arquivos-no-linux/</guid>
       <description>&lt;p&gt;No linux, um arquivo pode se subdividir em um dos seguinte stipos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Arquivos Comuns&lt;/li&gt;
@@ -79,10 +79,10 @@ Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a go
     
     <item>
       <title>Compiladores e Interpretadores</title>
-      <link>https://daniloarantes.com/compiladores-e-interpretadores/</link>
+      <link>https://daniloarantes.com/post/compiladores-e-interpretadores/</link>
       <pubDate>Tue, 27 Jun 2017 15:13:00 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/compiladores-e-interpretadores/</guid>
+      <guid>https://daniloarantes.com/post/compiladores-e-interpretadores/</guid>
       <description>A maneira de se comunicar com um computador chama-se programa e a única linguagem que o computador entende chama-se linguagem de máquina. Portanto todos os programas que se comunicam com a máquina devem estar em linguagem de máquina.
 A forma como os programas são traduzidos para a linguagem de máquina classifica-os em duas categorias:
  Interpretados Compilados  Os programas que fazem estas traduções são chamados interpretadores e Compiladores.
@@ -91,20 +91,20 @@ INTERPRETADORES Um interpretador lê a primeira instrução do programa, faz uma
     
     <item>
       <title>O que é um Cluster de Computadores?</title>
-      <link>https://daniloarantes.com/cluster-de-computadores/</link>
+      <link>https://daniloarantes.com/post/cluster-de-computadores/</link>
       <pubDate>Mon, 19 Jun 2017 21:26:58 +0000</pubDate>
       
-      <guid>https://daniloarantes.com/cluster-de-computadores/</guid>
+      <guid>https://daniloarantes.com/post/cluster-de-computadores/</guid>
       <description>Este é o trecho de um artigo meu sobre Redundância e Replicação de dados utilizando MySQL e MySQL Cluster. O desenvolvimento do artigo foi baseado em um cluster responsável pelo gerenciamento do banco de dados - em outro post falarei mais sobre esse trabalho com exemplo e aplicação prática.
 Cluster – Conceito Os clusters podem ser utilizados em diversas aplicações, como por exemplo, renderização de efeitos especiais, meteorologia, simulações, etc.</description>
     </item>
     
     <item>
       <title>Configurando o Automount (Autofs)</title>
-      <link>https://daniloarantes.com/autofs/</link>
+      <link>https://daniloarantes.com/post/autofs/</link>
       <pubDate>Thu, 15 Jun 2017 19:32:42 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/autofs/</guid>
+      <guid>https://daniloarantes.com/post/autofs/</guid>
       <description>A montagem automática é utilizada como um sistema de montagem sob demanda.
 Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.
 Inicialmente, instale o pacote autofs:
@@ -115,10 +115,10 @@ vim /etc/auto.master Dentro desse arquivo, verifique se a linha +dir está desco
     
     <item>
       <title>Criando Arquivamentos com CPIO</title>
-      <link>https://daniloarantes.com/cpio/</link>
+      <link>https://daniloarantes.com/post/cpio/</link>
       <pubDate>Thu, 15 Jun 2017 17:41:57 -0300</pubDate>
       
-      <guid>https://daniloarantes.com/cpio/</guid>
+      <guid>https://daniloarantes.com/post/cpio/</guid>
       <description>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.
 Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.
 Com este comando, várias atividades são facilitadas, como por exemplo:
