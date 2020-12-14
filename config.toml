@@ -16,7 +16,7 @@ pygmentsStyle = "pygments"
   [[menu.main]]
     name = "Blog"
     pre = "edit"
-    url = "/blog/"
+    url = "/post/"
     weight = 1
   [[menu.main]]
     name = "Tags"

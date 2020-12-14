@@ -1,5 +1,5 @@
         {{ define "main" }}
-        {{ range where .Site.RegularPages.ByWeight "Section" "blog" }}
+        {{ range where .Site.RegularPages.ByWeight "Section" "post" }}
         <article class="post">
           <header>
             <h2><a href="{{ .Permalink }}" class="titulo-post">{{ .Title }}</a></h2>
