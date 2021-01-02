@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 06 Mar 2018 11:02:07 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2021 12:30:00 -0300</lastBuildDate>
     
 	<atom:link href="https://daniloarantes.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Linux</title>
       <link>https://daniloarantes.com/tags/linux/</link>
-      <pubDate>Tue, 06 Mar 2018 11:02:07 -0300</pubDate>
+      <pubDate>Sat, 02 Jan 2021 12:30:00 -0300</pubDate>
       
       <guid>https://daniloarantes.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Servidor Linux</title>
+      <link>https://daniloarantes.com/tags/servidor-linux/</link>
+      <pubDate>Sat, 02 Jan 2021 12:30:00 -0300</pubDate>
+      
+      <guid>https://daniloarantes.com/tags/servidor-linux/</guid>
       <description></description>
     </item>
     
