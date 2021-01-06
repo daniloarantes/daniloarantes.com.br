@@ -16,5 +16,4 @@ http://www.infortrendbrasil.com.br/tecnologia/raid-1/
 
 Assista a gravação da aula e bons estudos!
 
-
 {{< youtube id="s3VOr_IGJWM" >}}
