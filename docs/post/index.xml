@@ -12,15 +12,15 @@
     
     
     <item>
-      <title>Instalacao Comentada do Debian com Raid 1 | Aula 02</title>
+      <title>Instalação Comentada do Debian com Raid 1 | Aula 02</title>
       <link>https://daniloarantes.com/post/instalacao-comentada-debian-raid1/</link>
       <pubDate>Wed, 06 Jan 2021 10:30:54 -0300</pubDate>
       
       <guid>https://daniloarantes.com/post/instalacao-comentada-debian-raid1/</guid>
       <description>Nesta segunda aula iremos realizar a instalação do sistema GNU/Linux Debian de maneira comentada explicando todas as etapas de instalação.
 Este sistema será instalado utilizando RAID 1, onde teremos dois discos espelhados e sincronizados em tempo real proporcionando alta disponibilidade e segurança para os dados armazenados.
- Saiba mais sobre RAID 1 neste link http://www.infortrendbrasil.com.br/tecnologia/raid-1/
-Assista a gravação da aula:
+ Saiba mais sobre RAID 1 neste link: http://www.infortrendbrasil.com.br/tecnologia/raid-1/
+Assista a gravação da aula e bons estudos!
   </description>
     </item>
     
