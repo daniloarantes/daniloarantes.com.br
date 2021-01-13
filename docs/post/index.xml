@@ -6,10 +6,21 @@
     <description>Recent content on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 06 Jan 2021 10:30:54 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 13 Jan 2021 20:06:45 -0300</lastBuildDate>
     
 	<atom:link href="https://daniloarantes.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gerenciamento de RAID via software no Debian | Aula 03</title>
+      <link>https://daniloarantes.com/post/gerenciamento_de_raid_via_software/</link>
+      <pubDate>Wed, 13 Jan 2021 20:06:45 -0300</pubDate>
+      
+      <guid>https://daniloarantes.com/post/gerenciamento_de_raid_via_software/</guid>
+      <description>Na segunda etapa da instalação do nosso servidor Debian, realizamos a configuração dos discos como RAID 1.
+Nesta aula vou demonstrar para vocês como realizar os testes de funcionamento do RAID via software, procedimentos necessários para gerenciar e manter este serviço funcionando.
+Comandos para gerenciamento do RAID via software Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.</description>
+    </item>
     
     <item>
       <title>Instalação Comentada do Debian com Raid 1 | Aula 02</title>
