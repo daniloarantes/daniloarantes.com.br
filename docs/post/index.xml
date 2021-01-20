@@ -6,10 +6,23 @@
     <description>Recent content on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 13 Jan 2021 20:06:45 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jan 2021 19:32:42 -0300</lastBuildDate>
     
 	<atom:link href="https://daniloarantes.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gerenciamento da Rede e Configuração do Bonding</title>
+      <link>https://daniloarantes.com/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</link>
+      <pubDate>Wed, 20 Jan 2021 19:32:42 -0300</pubDate>
+      
+      <guid>https://daniloarantes.com/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</guid>
+      <description>Olá pessoal!
+Nesta aula irei demonstrar inicialmente como realizar o gerenciamento básico da rede com o comando IP e também como configurar uma interface de rede com endereço estático.
+Também mostrarei como realizar a configuração do serviço bonding para obter a redundância das interfaces de rede. Teremos duas placas de rede funcionando neste serviço e, caso a placa principal falhe, a placa secundária entrará em funcionamento.
+Bons estudos!
+  </description>
+    </item>
     
     <item>
       <title>Gerenciamento de RAID via software no Debian | Aula 03</title>
