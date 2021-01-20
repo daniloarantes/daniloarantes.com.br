@@ -1,5 +1,5 @@
 ---
-title: "Gerenciamento da Rede e Configuração do Bonding"
+title: "Gerenciamento da Rede e Configuração do Bonding | Aula 04"
 date: 2021-01-20T19:32:42-03:00
 tags: []
 draft: false
