@@ -6,10 +6,21 @@
     <description>Recent content on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 20 Jan 2021 19:32:42 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 06 Feb 2021 10:31:15 -0300</lastBuildDate>
     
 	<atom:link href="https://daniloarantes.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Compilando o proxy Squid com suporte a HTTPS | Aula 05</title>
+      <link>https://daniloarantes.com/post/compilando-squid-com-suporte-https/</link>
+      <pubDate>Sat, 06 Feb 2021 10:31:15 -0300</pubDate>
+      
+      <guid>https://daniloarantes.com/post/compilando-squid-com-suporte-https/</guid>
+      <description>Um proxy atua como um gateway (porta de entrada/saída) entre os usuários de uma rede e a internet, atuando como intermediário separando os usuários finais dos sites que eles acessam.
+Fornecem vários níveis de funcionalidades, sendo possível atuar como um cache das páginas web, filtrar conteúdos, criação de regras de acesso, facilitando o controle de acesso à internet de acordo com políticas das empresas.
+O servidor proxy mais utilizado é o Squid e por padrão o pacote oferecido nos repositórios do Debian não oferecem suporte nativo para interceptação dos pacotes HTTPS.</description>
+    </item>
     
     <item>
       <title>Gerenciamento da Rede e Configuração do Bonding | Aula 04</title>

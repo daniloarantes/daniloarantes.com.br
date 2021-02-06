@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="keywords" content="">
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:title" content="Compilando o proxy Squid com suporte a HTTPS | Aula 05 : daniloarantes.com"/>
+  <meta property="og:site_name" content="Danilo Arantes"/>
+  <meta property="og:url" content="https://daniloarantes.com/post/compilando-squid-com-suporte-https/">
+  <meta property="og:locale" content="pt_BR">
+  
+  
+  
+  <meta property="article:published_time" content="2021-02-06"/>
+  <meta property="article:modified_time" content="2021-02-06"/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@daniloarantes">
+  <meta name="twitter:title" content="Compilando o proxy Squid com suporte a HTTPS | Aula 05 : daniloarantes.com">
+  <meta name="twitter:creator" content="@daniloarantes">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image:src" content="">
+  <meta name="twitter:domain" content="daniloarantes.com">
+
+  <meta name="generator" content="Hugo 0.74.3" />
+  
+  <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
+
+  
+  
+  <title>Compilando o proxy Squid com suporte a HTTPS | Aula 05 | Danilo Arantes</title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+    
+    
+    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
+  
+
+</nav>
+
+      <main id="main">
+      
+        <article class="post">
+          <header>
+            <h1 class="titulo-post">Compilando o proxy Squid com suporte a HTTPS | Aula 05</h1>
+            
+
+<p id="tags">
+<i data-feather="calendar"></i> <time datetime="2021-02-06">Feb 6, 2021</time>
+
+<br><br>
+          </header>
+          <p>Um proxy atua como um gateway (porta de entrada/saída) entre os usuários de uma rede e a internet, atuando como intermediário separando os usuários finais dos sites que eles acessam.</p>
+<p>Fornecem vários níveis de funcionalidades, sendo possível atuar como um cache das páginas web, filtrar conteúdos, criação de regras de acesso, facilitando o controle de acesso à internet de acordo com políticas das empresas.</p>
+<p>O servidor proxy mais utilizado é o <a href="http://www.squid-cache.org/"><strong>Squid</strong></a> e por padrão o pacote oferecido nos repositórios do Debian não oferecem suporte nativo para interceptação dos pacotes HTTPS.</p>
+<p>Por este motivo, será necessário <em>compilar</em> uma versão do squid com suporte a esse protocolos, para então, obter um melhor controle no acesso à internet.</p>
+<h2 id="assista-à-aula-desta-etapa">Assista à aula desta etapa</h2>
+<p>Acompanhe todas as etapas do vídeo na sequência deste artigo.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/r8aAzGQhNqI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="compilando-o-proxy-squid">Compilando o Proxy Squid</h2>
+<p>As etapas à seguir descrevem as etapas necessárias para compilar o squid.</p>
+<h3 id="instalação-de-dependências">Instalação de Dependências</h3>
+<p>Os pacotes abaixo são dependências necessárias para o funcionamento do Squid 4.6:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -y openssl build-essential libssl-dev libcrypto++-dev
+</code></pre></div><h3 id="ajustando-repositórios-do-sistema">Ajustando repositórios do sistema</h3>
+<p>Antes de baixar o código fonte do squid, é necessário verificar se você possui os repositórios <strong>deb-src</strong> configurados no APT.</p>
+<p><em>As etapas realizadas abaixo são para a versão <strong>Buster</strong> do Debian</em></p>
+<p>Acesse o arquivo <em>/etc/apt/sources.list</em> com o editor de textos:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi /etc/apt/sources.list
+</code></pre></div><p>Insira os seguintes repositórios:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">deb http://httpredir.debian.org/debian buster main contrib non-free
+deb-src http://httpredir.debian.org/debian buster main contrib non-free
+</code></pre></div><p>Salve o arquivo e em seguida atualize os repositórios do <strong>apt</strong>:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
+</code></pre></div><h3 id="baixando-o-código-fonte-do-squid">Baixando o código fonte do Squid</h3>
+<p>Para manter o sistema organizado, acesse o diretório <em>/root</em>.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">cd</span> /root
+</code></pre></div><p>O comando <strong>apt source</strong> faz o download do código fonte do software apontado no diretório corrente, ou seja, na sua localização atual (por iso realizamos a etapa anterior).</p>
+<p>O código fonte será necessário para a realização da compilação, mas você também poderá estudar como este software foi desenvolvido.</p>
+<p>Execute o seguinte comando:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt <span style="color:#008000">source</span> squid
+</code></pre></div><p>No momento do desenvolvimento deste material, a versão baixado foi a 4.6 e é importante verificar isso com o comando <strong>ls</strong>.</p>
+<p>Acesse o diretório do código fonte:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">cd</span> squid-4.6/
+</code></pre></div><h3 id="download-das-dependências">Download das dependências</h3>
+<p>O comando <strong>apt build-dep</strong> é utilizado para baixar dependências adicionais e necessárias para a compilação do software. O comando apt consegue resolver essas dependências de maneira prática.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt build-dep squid
+</code></pre></div><h3 id="observação-para-a-próxima-etapa">Observação para a próxima etapa</h3>
+<p>Na próxima etapa iremos realizar a configuração antes do processo de compilação para habilitar o suporte ao HTTPS.</p>
+<p>São várias linhas que serão utilizadas e para facilitar o seu trabalho sugiro acessar remotamente sua máquina virtual através do <em>Putty</em> ou pelo terminal do do GNU/Linux.</p>
+<p>Se estiver utilizando uma máqina virtual, considerando que seguiu as etapas dos posts anteriores, e modifique as configurações de rede no VirtualBox modificando o <strong>Adaptador 1</strong> para <strong>Placa em modo bridge</strong>.</p>
+<p>No servidor, desative a placa <em>enp0s3</em> com o comando <strong>ifdown enp0s3</strong> e em seguida habilite-a novamente com o comando <strong>ifup enp0s3</strong>. Esta placa é configurada como DHCP, então deverá pegar o mesmo IP da sua rede. Verifique qual foi o IP atribuído com o comando <strong>ip -c a l</strong>.</p>
+<p>Para acessar remotamente seu servidor instale o seguinte pacote <strong>apt install openssh-server</strong>. Acesse utilizando o usuário comum que você criou na instalação do servidor (por padrão o ssh não permite acesso como root).</p>
+<h3 id="configurando-antes-de-compilar">Configurando antes de compilar</h3>
+<p>Para o estudo que estamos realizando precisaremos utilizar o proxy Squid para bloquear páginas, controlando o conteúdo que os usuários podem acessar dentro da nossa rede.</p>
+<p>Por questões de segurança os sites utilizam o protocolo HTTPS, onde são utilizados certificados que garantem a segurança e confiabilidade para os arquivos que estamos acessando.</p>
+<p>O Squid estará no meio dessa comunicação e precisará verificar os pacotes que estão trafegando para capurando o endereço de destino do mesmo. Será necessário suporte para SSL (Secure Sockets Layer) e TLS (Transport Layer Security), que por padrão vem desabilitado.</p>
+<p>Antes de compilar um software, precisamos configurar parâmetros desejados para a versão, inclusive habilitando e desabilitando recursos. O comando abaixo (./configure) é responsável por esta tarefa:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure --build<span style="color:#666">=</span>x86_64-linux-gnu <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--prefix<span style="color:#666">=</span>/usr <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--includedir<span style="color:#666">=</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">prefix</span><span style="color:#b68;font-weight:bold">}</span>/include <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--mandir<span style="color:#666">=</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">prefix</span><span style="color:#b68;font-weight:bold">}</span>/share/man <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--infodir<span style="color:#666">=</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">prefix</span><span style="color:#b68;font-weight:bold">}</span>/share/info <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--sysconfdir<span style="color:#666">=</span>/etc <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--localstatedir<span style="color:#666">=</span>/var <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--libexecdir<span style="color:#666">=</span><span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">prefix</span><span style="color:#b68;font-weight:bold">}</span>/lib/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--srcdir<span style="color:#666">=</span>. <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--disable-maintainer-mode <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--disable-dependency-tracking <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--disable-silent-rules <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;BUILDCXXFLAGS=-g -O2 -fdebug-prefix-map=/build/squid-UruMVl/squid-4.6=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -latomic&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;BUILDCXX=x86_64-linux-gnu-g++&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-build-environment<span style="color:#666">=</span>default <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--datadir<span style="color:#666">=</span>/usr/share/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--sysconfdir<span style="color:#666">=</span>/etc/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--libexecdir<span style="color:#666">=</span>/usr/lib/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--mandir<span style="color:#666">=</span>/usr/share/man <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-inline <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--disable-arch-native <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-async-io<span style="color:#666">=</span><span style="color:#666">8</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-storeio<span style="color:#666">=</span>ufs,aufs,diskd,rock <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-removal-policies<span style="color:#666">=</span>lru,heap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-delay-pools <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-cache-digests <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-icap-client <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-follow-x-forwarded-for <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-auth-basic<span style="color:#666">=</span>DB,fake,getpwnam,LDAP,NCSA,NIS,PAM,POP3,RADIUS,SASL,SMB <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-auth-digest<span style="color:#666">=</span>file,LDAP <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-auth-negotiate<span style="color:#666">=</span>kerberos,wrapper <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-auth-ntlm<span style="color:#666">=</span>fake,SMB_LM <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-external-acl-helpers<span style="color:#666">=</span>file_userip,kerberos_ldap_group,LDAP_group,session,SQL_session,time_quota,unix_group,wbinfo_group <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-security-cert-validators<span style="color:#666">=</span>fake <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-storeid-rewrite-helpers<span style="color:#666">=</span>file <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-url-rewrite-helpers<span style="color:#666">=</span>fake <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-eui <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-esi <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-icmp <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-zph-qos <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-ecap <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--disable-translation <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-swapdir<span style="color:#666">=</span>/var/spool/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-logdir<span style="color:#666">=</span>/var/log/squid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-pidfile<span style="color:#666">=</span>/var/run/squid.pid <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-filedescriptors<span style="color:#666">=</span><span style="color:#666">65536</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-large-files <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-gnutls <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-default-user<span style="color:#666">=</span>proxy <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-openssl <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-ssl <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--with-open-ssl<span style="color:#666">=</span>/etc/ssl/openssl.cnf <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-ssl-crtd <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span>--enable-linux-netfilter <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;CFLAGS=-g -O2 -fdebug-prefix-map=/build/squid-UruMVl/squid-4.6=. -fstack-protector-strong -Wformat -Werror=format-security -Wall&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;LDFLAGS=-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -latomic&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;CPPFLAGS=-Wdate-time -D_FORTIFY_SOURCE=2&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;CXX=x86_64-linux-gnu-g++&#39;</span> <span style="color:#b62;font-weight:bold">\
+</span><span style="color:#b62;font-weight:bold"></span><span style="color:#ba2121">&#39;CXXFLAGS=-g -O2 -fdebug-prefix-map=/build/squid-UruMVl/squid-4.6=. -fstack-protector-strong -Wformat -Werror=format-security&#39;</span>
+</code></pre></div><h3 id="etapa-de-compilação-do-squid">Etapa de Compilação do Squid</h3>
+<p>Se o processo anterior for executado e finalizado sem erros, partimos para a próxima etapa que é compilar o código fonte do Squid, gerando um arquivo binário. A compilação é um processo demorado, realizada com o comando <em>make</em>:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make
+</code></pre></div><p>Ao fim da compilação execute o comando abaixo para instalar o Squid:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make install
+</code></pre></div><h3 id="ajustes-pós-instalação">Ajustes pós instalação</h3>
+<p>Os comandos abaixo alteram a propriedade dos respectivos diretórios para o usuário e grupo proxy:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chown -R proxy.proxy /var/spool/squid
+
+chown -R proxy.proxy /var/log/squid
+</code></pre></div><p><strong>Iniciando o cache de certificados TLS</strong></p>
+<p>Durante seu funcionamento, o Squid pode gerar e armazenar certificados que serão utilizados para as comunicações.</p>
+<p>Execute o comando abaixo para iniciar o cache para estes certificados:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/lib/squid/security_file_certgen -c -s /var/lib/ssl_db -M 4MB
+</code></pre></div><h3 id="copiar-o-script-de-inicialização-do-squid-para-o-systemd">Copiar o script de inicialização do squid para o systemd</h3>
+<p>O script deve ser copiado para possibilitar gerenciar o serviço através do SystemD (iniciar, parar, recarregar e verificar status de funcionamento):</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp tools/systemd/squid.service /etc/systemd/system/
+</code></pre></div><h3 id="iniciando-o-squid">Iniciando o Squid</h3>
+<p>Nesta etapa, antes de iniciar o squid, será necessário realizar um pequeno ajuste para que o serviço inicie corretamente.</p>
+<p>Acesse o arquivo de configuração do squid com o editor de textos:</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi /etc/squid/squid.conf
+</code></pre></div><p>Dentro do arquivo localize a seguinte linha:</p>
+<p><em>include  /etc/squid/conf.d/</em> *</p>
+<figure>
+    <img src="/imagens/squid1.png"/> 
+</figure>
+
+<p>Entre no modo de inserção do Squid (i)  e comente esta linha adicionando # no início dela, como mostra a imagem:</p>
+<figure>
+    <img src="/imagens/squid2.png"/> 
+</figure>
+
+<p>Salve o arquivo e feche ( [ESQ] :x ).</p>
+<p>Execute os comandos abaixo para habilitar e iniciar o squid. Finalize visualizando o status do serviço.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl <span style="color:#008000">enable</span> squid.service
+
+systemctl start squid.service
+
+systemctl status squid.service
+</code></pre></div><p>Após todos os procedimentos acima o Squid estará preparado para nossa próxima etapa que será a configuração do arquivo <strong>squid.conf</strong>.</p>
+<p>Ficou com alguma dúvida, entre em contato comigo.</p>
+<p>Um abraço e até a próxima!</p>
+
+        </article>
+  
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="https://daniloarantes.com/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>
