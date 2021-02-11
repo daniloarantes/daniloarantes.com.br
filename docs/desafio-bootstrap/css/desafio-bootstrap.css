@@ -1,0 +1,33 @@
+
+body {
+  background-color: black;
+}
+
+
+#topo {
+  margin-bottom: 20px;
+}
+
+.artigo{
+  margin-top: 20px;
+  padding: 10px;
+  color: #9e9e9e;
+  text-align: justify;
+}
+
+#rodape {
+  height: 15vh;
+  margin-top: 20px;
+  color: white;
+  padding: 20px;
+}
+
+footer img{
+  width: 10%;
+}
+
+#sobre-mim {
+  overflow: auto;
+  height: 100vh;
+  color: #9e9e9e;
+}
