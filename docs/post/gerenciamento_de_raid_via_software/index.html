@@ -25,7 +25,7 @@
   <meta name="twitter:image:src" content="">
   <meta name="twitter:domain" content="daniloarantes.com">
 
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.96.0" />
   
   <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
 
@@ -64,7 +64,7 @@
             
 
 <p id="tags">
-<i data-feather="calendar"></i> <time datetime="2021-01-13">Jan 13, 2021</time>
+  <i data-feather="calendar"></i>Atualizado em: <time datetime="2021-01-13">Jan 13, 2021</time>
 
 <br><br>
           </header>
@@ -73,14 +73,14 @@
 <h2 id="comandos-para-gerenciamento-do-raid-via-software">Comandos para gerenciamento do RAID via software</h2>
 <p>Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.</p>
 <p><strong>Verificar detalhes sobre um dispositivo RAID</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --detail /dev/md0
-</code></pre></div><p><strong>Remover dispositivo</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --manage /dev/md0 --fail /dev/sda1
-</code></pre></div><p><strong>Remover um disco do RAID</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --manage /dev/md0 --remove /dev/sda1
-</code></pre></div><p><strong>Adicionar disco ao RAID</strong></p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --manage /dev/md0 --add /dev/sda1
-</code></pre></div><p>Assista a aula abaixo e veja esses comandos em funcionamento.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --detail /dev/md0
+</span></span></code></pre></div><p><strong>Remover dispositivo</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --fail /dev/sda1
+</span></span></code></pre></div><p><strong>Remover um disco do RAID</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --remove /dev/sda1
+</span></span></code></pre></div><p><strong>Adicionar disco ao RAID</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --add /dev/sda1
+</span></span></code></pre></div><p>Assista a aula abaixo e veja esses comandos em funcionamento.</p>
 <p>Bons estudos!</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">

@@ -6,11 +6,7 @@
     <description>Recent content in Servidor Linux on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 02 Jan 2021 12:30:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://daniloarantes.com/tags/servidor-linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 02 Jan 2021 12:30:00 -0300</lastBuildDate><atom:link href="https://daniloarantes.com/tags/servidor-linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</title>
       <link>https://daniloarantes.com/post/vm-debian-raid-1/</link>

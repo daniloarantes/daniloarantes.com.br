@@ -26,7 +26,7 @@
   <meta name="twitter:image:src" content="">
   <meta name="twitter:domain" content="daniloarantes.com">
 
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.96.0" />
   
   <link rel="stylesheet" href="https://daniloarantes.com/css/estilo.css">
 
@@ -65,7 +65,7 @@
             
 
 <p id="tags">
-<i data-feather="calendar"></i> <time datetime="2018-03-06">Mar 6, 2018</time>
+  <i data-feather="calendar"></i>Atualizado em: <time datetime="2018-03-06">Mar 6, 2018</time>
 
 
 
@@ -83,24 +83,24 @@
 <p><strong>Para sistemas com SYSTEMD</strong></p>
 <p>Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:</p>
 <p>1º - Verificar o status do Bluetooth</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status bluetooth
-</code></pre></div><p>Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status bluetooth
+</span></span></code></pre></div><p>Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
 <p>2º - Parar o serviço</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl stop bluetooth
-</code></pre></div><p>3º - Desabilitar o serviço</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl disable bluetooth
-</code></pre></div><p>Após esse procedimento o bluetooth estará desabilitado em seu sistema. Para habilitar novamente, substitua o <strong>disable</strong> do passo 3 para <strong>enable</strong> e substitua o <strong>stop</strong> so passo 2 para <strong>start</strong>.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop bluetooth
+</span></span></code></pre></div><p>3º - Desabilitar o serviço</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl disable bluetooth
+</span></span></code></pre></div><p>Após esse procedimento o bluetooth estará desabilitado em seu sistema. Para habilitar novamente, substitua o <strong>disable</strong> do passo 3 para <strong>enable</strong> e substitua o <strong>stop</strong> so passo 2 para <strong>start</strong>.</p>
 <p><strong>Para sistemas sem SYSTEMD, siga os passos abaixo:</strong></p>
 <p>Uma maneira prática para desabilitar o bluetooth na inicialização do sistema é inserir uma simples linha no arquivo <strong>/etc/rc.local.</strong></p>
 <p><strong>Como fazer:</strong></p>
 <p>1º - Instalar o pacote rfkill</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install rfkill
-</code></pre></div><p>2º - Inserir comando dentro do arquivo <strong>/etc/rc.local</strong></p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install rfkill
+</span></span></code></pre></div><p>2º - Inserir comando dentro do arquivo <strong>/etc/rc.local</strong></p>
 <p>Utilizando seu editor preferido, abra o arquivo:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi /etc/rc.local
-</code></pre></div><p>3º - Dentro do **rc.local **insira a linha abaixo:</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rfkill block bluetooth
-</code></pre></div><p>Salve e saia do arquivo.</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /etc/rc.local
+</span></span></code></pre></div><p>3º - Dentro do **rc.local **insira a linha abaixo:</p>
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rfkill block bluetooth
+</span></span></code></pre></div><p>Salve e saia do arquivo.</p>
 <p>Pronto! Agora basta reiniciar o computador e verificar se funcionou corretamente.</p>
 <h3 id="referência"><strong>Referência</strong></h3>
 <p><a href="http://pseudomorph.wordpress.com/2012/01/15/disabling-bluetooth-as-default-in-debian-based-distros/">Blog Pseudomorph</a>

@@ -6,11 +6,7 @@
     <description>Recent content in Linux on Danilo Arantes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 02 Jan 2021 12:30:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://daniloarantes.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 02 Jan 2021 12:30:00 -0300</lastBuildDate><atom:link href="https://daniloarantes.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</title>
       <link>https://daniloarantes.com/post/vm-debian-raid-1/</link>
@@ -44,7 +40,7 @@ systemctl status bluetooth Serão retornadas mensagens sobre o status de funcion
       <description>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.
 Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.
 Para isso, utilizei o comando sed para modificar a versão dos repositórios no arquivo /etc/apt/sources.list :
-sed -i &amp;#39;s/Stretch/Buster/g&amp;#39; /etc/apt/sources.list Atenção: você pode ter algum repositório que necessite permanecer na versão Stretch.</description>
+ sed -i &amp;#39;s/Stretch/Buster/g&amp;#39; /etc/apt/sources.list Atenção: você pode ter algum repositório que necessite permanecer na versão Stretch.</description>
     </item>
     
     <item>
