@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="keywords" content="">
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:title" content="Linux : daniloarantes.com.br"/>
+  <meta property="og:site_name" content="Danilo Arantes"/>
+  <meta property="og:url" content="/tags/linux/">
+  <meta property="og:locale" content="pt_BR">
+  
+  <meta property="article:published_time" content="2021-01-02"/>
+  <meta property="article:modified_time" content="2021-01-02"/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@daniloarantes">
+  <meta name="twitter:title" content="Linux : daniloarantes.com.br">
+  <meta name="twitter:creator" content="@daniloarantes">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image:src" content="">
+  <meta name="twitter:domain" content="daniloarantes.com.br">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  
+  <link rel="stylesheet" href="/css/estilo.css">
+
+  
+  
+  <title>Linux | </title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+
+</nav>
+
+      <main id="main">
+      
+
+  <article class="post">
+    <header>
+      <h1><a href="/post/vm-debian-raid-1/" class="titulo-post">Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</a></h1>
+        2 Jan 2021
+    </header>
+    <p>Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.
+Nesta primeira etapa abordarei a criação da máquina virtual utilizando o VirtualBox. Ela será preparada para posteriormente instalarmos o sistema operacional com RAID 1, oferecendo um backup dos dados do nosso servidor.
+É importante salientar que este é um cenário de estudos que também pode ser implantado em um servidor real e as configurações mostradas são exemplos, podendo ser modificadas e aperfeiçoadas para várias necessidades.</p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/desabilitar-bluetooth/" class="titulo-post">Desabilitando o Bluetooth na inicialização do Debian</a></h1>
+        6 Mar 2018
+    </header>
+    <p>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.
+Para sistemas com SYSTEMD
+Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:
+1º - Verificar o status do Bluetooth
+systemctl status bluetooth Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/atualizando-debian-stretch-para-buster/" class="titulo-post">Atualizando Debian Stretch para Buster</a></h1>
+        23 Oct 2017
+    </header>
+    <p>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.
+Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.
+Para isso, utilizei o comando sed para modificar a versão dos repositórios no arquivo /etc/apt/sources.list :
+sed -i &#39;s/Stretch/Buster/g&#39; /etc/apt/sources.list Atenção: você pode ter algum repositório que necessite permanecer na versão Stretch.</p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/docker-failed-to-register-layer/" class="titulo-post">Correção de erro &#39;failed to register layer&#39; no Docker</a></h1>
+        12 Oct 2017
+    </header>
+    <p>O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.
+Em uma das aventuras, ao tentar fazer o pull de um container com Evernote, me deparei com a seguinte mensagem de erro:
+&ldquo;failed to register layer: symlink&hellip;&rdquo;
+E eu não conseguia finalizar o processo de forma alguma.</p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/tipos-de-arquivos-no-linux/" class="titulo-post">Tipos de arquivos no Linux</a></h1>
+        5 Jul 2017
+    </header>
+    <p><p>No linux, um arquivo pode se subdividir em um dos seguinte stipos:</p>
+<ul>
+<li>Arquivos Comuns</li>
+<li>Diretórios</li>
+<li>Links</li>
+<li>Device Files</li>
+<li>Sockets</li>
+<li>Pipes</li>
+</ul>
+<p>Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:</p></p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/autofs/" class="titulo-post">Configurando o Automount (Autofs)</a></h1>
+        15 Jun 2017
+    </header>
+    <p>A montagem automática é utilizada como um sistema de montagem sob demanda.
+Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.
+Inicialmente, instale o pacote autofs:
+apt-get install autofs Principal arquivo de configuração: /etc/auto.master
+Configurando automount: Edite o arquivo /etc/auto.master
+vim /etc/auto.master Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</p>
+  </article>
+
+
+
+    
+  <article class="post">
+    <header>
+      <h1><a href="/post/cpio/" class="titulo-post">Criando Arquivamentos com CPIO</a></h1>
+        15 Jun 2017
+    </header>
+    <p>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.
+Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.
+Com este comando, várias atividades são facilitadas, como por exemplo:
+Copiar arquivos para um arquivamento; Extrair arquivos de um arquivamento; Copiar arquivos para outra estrutura de diretórios. Alguns parâmetros utilizados com o CPIO:
+-i - Extrair backup -o - Cria backup -t - Mostra o conteúdo do backup -F - Especifica o arquivo de Backup -d - Cria diretórios se necessário -v - Modo Verboso – Mostra na tela as ações -p - Ativa o modo de cópia Criando cenário para teste: Execute os comandos abaixo para criar o cenário que será utilizado para teste:</p>
+  </article>
+
+
+
+    
+
+
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>
