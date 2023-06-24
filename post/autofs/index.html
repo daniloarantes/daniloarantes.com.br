@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="keywords" content="Linux, ">
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:title" content="Configurando o Automount (Autofs) : daniloarantes.com.br"/>
+  <meta property="og:site_name" content="Danilo Arantes"/>
+  <meta property="og:url" content="/post/autofs/">
+  <meta property="og:locale" content="pt_BR">
+  
+  <meta property="article:tag" content="Linux">
+  
+  
+  <meta property="article:published_time" content="2017-06-15"/>
+  <meta property="article:modified_time" content="2017-06-15"/>
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@daniloarantes">
+  <meta name="twitter:title" content="Configurando o Automount (Autofs) : daniloarantes.com.br">
+  <meta name="twitter:creator" content="@daniloarantes">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image:src" content="">
+  <meta name="twitter:domain" content="daniloarantes.com.br">
+
+  <meta name="generator" content="Hugo 0.111.3">
+  
+  <link rel="stylesheet" href="/css/estilo.css">
+
+  
+  
+  <title>Configurando o Automount (Autofs) | </title>
+</head>
+
+  <body>
+    <div class="container">
+      <header class="topo">
+      	<h1><a class="titulo-pagina" href="">Danilo Arantes</a></h1>
+      </header>
+      <nav class="menu">
+  
+
+</nav>
+
+      <main id="main">
+      
+        <article class="post">
+          <header>
+            <h1 class="titulo-post">Configurando o Automount (Autofs)</h1>
+            
+
+<p id="tags">
+  <i data-feather="calendar"></i>Atualizado em: <time datetime="2017-06-15">Jun 15, 2017</time>
+
+
+
+  <i id="icon" data-feather="tag"></i>
+
+  
+  
+  <a class="tag" href="tags/linux">Linux</a>
+  
+
+
+<br><br>
+          </header>
+          <p>A montagem automática é utilizada como um sistema de montagem sob demanda.</p>
+<p>Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.</p>
+<p>Inicialmente, instale o pacote autofs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install autofs
+</span></span></code></pre></div><p>Principal arquivo de configuração: <strong>/etc/auto.master</strong></p>
+<h2 id="configurando-automount"><strong>Configurando automount:</strong></h2>
+<p>Edite o arquivo /etc/auto.master</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/auto.master
+</span></span></code></pre></div><p>Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</p>
+<p>Essas linhas apontam para um diretório onde ficarão os arquivos de configuração (/etc/auto.master.d).</p>
+<p>Crie o diretório <em>/etc/auto.master.d</em></p>
+<p>Dentro de <em>/etc/auto.master.d</em> crie o arquivo <em>montagem.autofs</em> e dentro desse arquivo coloque o seguinte conteúdo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/Arquivos /etc/auto.montagem &amp;<span style="color:#75715e">#8211;timeout=10</span>
+</span></span></code></pre></div><p>Agora crie o arquivo <em>/etc/auto.montagem</em> com o conteúdo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>montagem -fstype<span style="color:#f92672">=</span>xfs,rw :/dev/sdb1
+</span></span></code></pre></div><p><strong>“montagem”</strong> é o ponto de montagem para a partição <strong>/dev/sdb1</strong> que possui sistema de arquivos <strong>XFS</strong> e será permitido RW – Leitura e Escrita.</p>
+<p>O diretório “montagem” será montado dentro do diretório “/Arquivos”, portanto, crie esse diretório:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /Arquivos
+</span></span></code></pre></div><p>Reinicie o Autofs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service autofs restart
+</span></span></code></pre></div><h1 id="testando"><strong>Testando</strong></h1>
+<p>Execute o comando abaixo para verificar os pontos de montagem:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h
+</span></span></code></pre></div><p>Acesse o diretório <strong>/Arquivos/montagem</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /Arquivos/montagem
+</span></span></code></pre></div><p>Ao executar o comando abaixo, deverá ser exibida a partição <strong>/dev/sdb1</strong> apontando para o diretório <em>montagem</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h
+</span></span></code></pre></div><h3 id="referência"><strong>Referência</strong></h3>
+<p><a href="http://www.youtube.com/watch?v=sRqre0ekfMA">Autofs - Basic Configuration</a></p>
+
+        </article>
+  
+      </main>
+
+    </div>
+
+  </body>
+  
+<script src="js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+</html>
