@@ -1,8 +1,0 @@
-<nav class="menu">
-  {{ range .Site.Menus.main }}
-    {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
-    {{ $text := print $icon " " .Name | safeHTML }}
-    <a href="{{ .URL }}" class="item-menu">{{ $text }}</a>
-  {{ end }}
-
-</nav>
