@@ -9,7 +9,7 @@
   <meta property="og:description" content=""/>
   <meta property="og:title" content="Gerenciamento de RAID via software no Debian | Aula 03 : daniloarantes.com.br"/>
   <meta property="og:site_name" content="Danilo Arantes"/>
-  <meta property="og:url" content="/post/gerenciamento_de_raid_via_software/">
+  <meta property="og:url" content="https://daniloarantes.com.br/post/gerenciamento_de_raid_via_software/">
   <meta property="og:locale" content="pt_BR">
   
   
@@ -27,19 +27,31 @@
 
   <meta name="generator" content="Hugo 0.111.3">
   
-  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="https://daniloarantes.com.br/css/estilo.css">
 
   
   
-  <title>Gerenciamento de RAID via software no Debian | Aula 03 | </title>
+  <title>Gerenciamento de RAID via software no Debian | Aula 03 | Danilo Arantes</title>
 </head>
 
   <body>
     <div class="container">
       <header class="topo">
-      	<h1><a class="titulo-pagina" href="">Danilo Arantes</a></h1>
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com.br">Danilo Arantess</a></h1>
       </header>
       <nav class="menu">
+  
+    
+    
+    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
   
 
 </nav>
@@ -61,13 +73,13 @@
 <h2 id="comandos-para-gerenciamento-do-raid-via-software">Comandos para gerenciamento do RAID via software</h2>
 <p>Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.</p>
 <p><strong>Verificar detalhes sobre um dispositivo RAID</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --detail /dev/md0
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --detail /dev/md0
 </span></span></code></pre></div><p><strong>Remover dispositivo</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --fail /dev/sda1
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --fail /dev/sda1
 </span></span></code></pre></div><p><strong>Remover um disco do RAID</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --remove /dev/sda1
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --remove /dev/sda1
 </span></span></code></pre></div><p><strong>Adicionar disco ao RAID</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --add /dev/sda1
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --manage /dev/md0 --add /dev/sda1
 </span></span></code></pre></div><p>Assista a aula abaixo e veja esses comandos em funcionamento.</p>
 <p>Bons estudos!</p>
 
@@ -84,7 +96,7 @@
 
   </body>
   
-<script src="js/feather.min.js"></script>
+<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
 <script>
   feather.replace()
 </script>

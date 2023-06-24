@@ -9,7 +9,7 @@
   <meta property="og:description" content=""/>
   <meta property="og:title" content="Desabilitando o Bluetooth na inicialização do Debian : daniloarantes.com.br"/>
   <meta property="og:site_name" content="Danilo Arantes"/>
-  <meta property="og:url" content="/post/desabilitar-bluetooth/">
+  <meta property="og:url" content="https://daniloarantes.com.br/post/desabilitar-bluetooth/">
   <meta property="og:locale" content="pt_BR">
   
   <meta property="article:tag" content="Linux">
@@ -28,19 +28,31 @@
 
   <meta name="generator" content="Hugo 0.111.3">
   
-  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="https://daniloarantes.com.br/css/estilo.css">
 
   
   
-  <title>Desabilitando o Bluetooth na inicialização do Debian | </title>
+  <title>Desabilitando o Bluetooth na inicialização do Debian | Danilo Arantes</title>
 </head>
 
   <body>
     <div class="container">
       <header class="topo">
-      	<h1><a class="titulo-pagina" href="">Danilo Arantes</a></h1>
+      	<h1><a class="titulo-pagina" href="https://daniloarantes.com.br">Danilo Arantess</a></h1>
       </header>
       <nav class="menu">
+  
+    
+    
+    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
   
 
 </nav>
@@ -61,7 +73,7 @@
 
   
   
-  <a class="tag" href="tags/linux">Linux</a>
+  <a class="tag" href="https://daniloarantes.com.br/tags/linux">Linux</a>
   
 
 
@@ -71,23 +83,23 @@
 <p><strong>Para sistemas com SYSTEMD</strong></p>
 <p>Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:</p>
 <p>1º - Verificar o status do Bluetooth</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status bluetooth
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status bluetooth
 </span></span></code></pre></div><p>Serão retornadas mensagens sobre o status de funcionamento do serviço.</p>
 <p>2º - Parar o serviço</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop bluetooth
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop bluetooth
 </span></span></code></pre></div><p>3º - Desabilitar o serviço</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl disable bluetooth
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl disable bluetooth
 </span></span></code></pre></div><p>Após esse procedimento o bluetooth estará desabilitado em seu sistema. Para habilitar novamente, substitua o <strong>disable</strong> do passo 3 para <strong>enable</strong> e substitua o <strong>stop</strong> so passo 2 para <strong>start</strong>.</p>
 <p><strong>Para sistemas sem SYSTEMD, siga os passos abaixo:</strong></p>
 <p>Uma maneira prática para desabilitar o bluetooth na inicialização do sistema é inserir uma simples linha no arquivo <strong>/etc/rc.local.</strong></p>
 <p><strong>Como fazer:</strong></p>
 <p>1º - Instalar o pacote rfkill</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install rfkill
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install rfkill
 </span></span></code></pre></div><p>2º - Inserir comando dentro do arquivo <strong>/etc/rc.local</strong></p>
 <p>Utilizando seu editor preferido, abra o arquivo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /etc/rc.local
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /etc/rc.local
 </span></span></code></pre></div><p>3º - Dentro do **rc.local **insira a linha abaixo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rfkill block bluetooth
+<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rfkill block bluetooth
 </span></span></code></pre></div><p>Salve e saia do arquivo.</p>
 <p>Pronto! Agora basta reiniciar o computador e verificar se funcionou corretamente.</p>
 <h3 id="referência"><strong>Referência</strong></h3>
@@ -103,7 +115,7 @@
 
   </body>
   
-<script src="js/feather.min.js"></script>
+<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
 <script>
   feather.replace()
 </script>
