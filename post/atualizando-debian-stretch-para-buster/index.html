@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
+<html lang="pt-BR">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Atualizando Debian Stretch para Buster">
+  <meta name="description" content="Alterando os repositórios com sed e conduzindo a atualização com segurança.">
   <meta name="keywords" content="Linux">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Atualizando Debian Stretch para Buster | Danilo Arantes">
-  <meta property="og:description" content="Atualizando Debian Stretch para Buster">
+  <meta property="og:description" content="Alterando os repositórios com sed e conduzindo a atualização com segurança.">
   <meta property="og:site_name" content="Danilo Arantes">
   <meta property="og:url" content="https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta property="og:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <meta property="article:tag" content="Linux">
   <meta property="article:published_time" content="2017-10-23">
   <meta property="article:modified_time" content="2017-10-23">
@@ -20,81 +20,118 @@
   <meta name="twitter:site" content="@daniloarantes">
   <meta name="twitter:creator" content="@daniloarantes">
   <meta name="twitter:title" content="Atualizando Debian Stretch para Buster | Danilo Arantes">
-  <meta name="twitter:description" content="Atualizando Debian Stretch para Buster">
-  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta name="twitter:description" content="Alterando os repositórios com sed e conduzindo a atualização com segurança.">
+  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <link rel="canonical" href="https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/">
   
   <meta name="generator" content="Hugo 0.170.1">
-  <link rel="stylesheet" href="/css/estilo.css">
+  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <script>
+     
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/site.min.9010dc13606bce6d4b3ac65738b241200c765772b3660692663741168b37ee79.css" integrity="sha256-kBDcE2Brzm1LOsZXOLJBIAx2V3KzZgaSZjdBFos37nk=">
   <title>Atualizando Debian Stretch para Buster | Danilo Arantes</title>
 </head>
 
   <body>
-    <div class="container">
-      <header class="topo">
-          <a href="/" style="flex: 1 0 0;"><img class="titulo-pagina" src="/imagens/LogoDanilo.svg"></a>
-      </header>
-      <nav class="menu">
-  
-    
-    
-    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
-  
-    
-    
-    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
-  
-    
-    
-    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
-  
-
-</nav>
-
-      <main id="main">
-      
-        <article class="post">
-          <header>
-            <h1 class="titulo-post">Atualizando Debian Stretch para Buster</h1>
-            
-
-<p id="tags">
-  <i data-feather="calendar"></i>Atualizado em: <time datetime="2017-10-23">Oct 23, 2017</time>
-
-
-
-  <i id="icon" data-feather="tag"></i>
-
-  
-  
-  <a class="tag" href="https://daniloarantes.com.br/tags/linux">Linux</a>
-  
-
-
-<br><br>
-          </header>
-          <p>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.</p>
-<p>Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.</p>
-<p>Para isso, utilizei o comando <strong>sed</strong> para modificar a versão dos repositórios no arquivo <strong>/etc/apt/sources.list</strong> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> sed -i <span style="color:#ba2121">&#39;s/Stretch/Buster/g&#39;</span> /etc/apt/sources.list
-</span></span></code></pre></div><p><strong>Atenção:</strong> você pode ter algum repositório que necessite permanecer na versão Stretch. Se executou o comando acima, acesse o arquivo sources.list com o editor de textos e modifique o que for necessário.</p>
-<p>O próximo passo é atualizar os repositórios:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> apt update
-</span></span></code></pre></div><p>Será exibido que há atualizações para o sistema. Então, faça o upgrade com o comando:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> apt dist-upgrade
-</span></span></code></pre></div><p>Após o upgrade, se não ocorreu nenhum erro, reinicie o sistema e está finalizado o processo e você já estará com a versão Testing (Buster).</p>
-
-        </article>
-  
-      </main>
-
-    </div>
-
-  </body>
-  
-<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
+    <div class="faixa" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <header class="topo wrap">
+  <a class="marca" href="/" aria-label="Danilo Arantes — página inicial">
+    <span>Danilo Arantes</span><i aria-hidden="true"></i>
+  </a>
+  <div class="topo-acoes">
+  <nav class="menu" aria-label="Principal">
+      <a href="/post/" aria-current="page">Blog</a>
+      <a href="/#serie">Aulas</a>
+      <a href="/sobre/">Sobre</a>
+  </nav>
+  <button class="tema" type="button" id="tema" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+  </div>
+</header>
 <script>
-  feather.replace()
+  (function () {
+    var raiz = document.documentElement;
+    var botao = document.getElementById('tema');
+    var escuroSistema = window.matchMedia('(prefers-color-scheme: dark)');
+    function atual() {
+      return raiz.getAttribute('data-theme') || (escuroSistema.matches ? 'dark' : 'light');
+    }
+    function rotular() {
+      var escuro = atual() === 'dark';
+      botao.setAttribute('aria-pressed', escuro ? 'true' : 'false');
+      botao.setAttribute('aria-label', escuro ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+      botao.title = botao.getAttribute('aria-label');
+    }
+    botao.addEventListener('click', function () {
+      var novo = atual() === 'dark' ? 'light' : 'dark';
+      raiz.setAttribute('data-theme', novo);
+      try { localStorage.setItem('tema', novo); } catch (e) {}
+      rotular();
+    });
+    escuroSistema.addEventListener('change', rotular);
+    rotular();
+  })();
 </script>
 
+    <main class="wrap" id="main">
+      
+<article class="artigo">
+  <header class="artigo-topo">
+    <div class="artigo-meta">
+      <a class="cat" href="/post/" style="--h:150"><i aria-hidden="true"></i>Linux</a>
+      <time datetime="2017-10-23">23 de outubro de 2017</time>
+    </div>
+    <h1>Atualizando Debian Stretch para Buster</h1>
+    <ul class="pilulas" aria-label="Tags">
+      <li><a href="/tags/linux/">#Linux</a></li>
+    </ul>
+  </header>
+
+  <div class="prosa">
+    <p>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.</p>
+<p>Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.</p>
+<p>Para isso, utilizei o comando <strong>sed</strong> para modificar a versão dos repositórios no arquivo <strong>/etc/apt/sources.list</strong> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> sed -i <span style="color:#a5d6ff">&#39;s/Stretch/Buster/g&#39;</span> /etc/apt/sources.list
+</span></span></code></pre></div><p><strong>Atenção:</strong> você pode ter algum repositório que necessite permanecer na versão Stretch. Se executou o comando acima, acesse o arquivo sources.list com o editor de textos e modifique o que for necessário.</p>
+<p>O próximo passo é atualizar os repositórios:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> apt update
+</span></span></code></pre></div><p>Será exibido que há atualizações para o sistema. Então, faça o upgrade com o comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> apt dist-upgrade
+</span></span></code></pre></div><p>Após o upgrade, se não ocorreu nenhum erro, reinicie o sistema e está finalizado o processo e você já estará com a versão Testing (Buster).</p>
+
+  </div>
+
+  <footer class="artigo-fim">
+    <a class="link-forte voltar" href="/post/">← Todas as publicações</a>
+  </footer>
+</article>
+
+    </main>
+    <footer class="rodape">
+  <div class="wrap">
+    <span>© 2026 Danilo Arantes</span>
+    <nav aria-label="Links">
+      <a href="https://twitter.com/daniloarantes">Twitter</a>
+      <a href="https://www.youtube.com/watch?v=tEYL9-DU60g">YouTube</a>
+      <a href="/tags/">Tags</a>
+      <a href="/index.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+  </body>
 </html>

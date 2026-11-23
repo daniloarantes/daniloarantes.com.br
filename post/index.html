@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
+<html lang="pt-BR">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,285 +10,296 @@
   <meta property="og:site_name" content="Danilo Arantes">
   <meta property="og:url" content="https://daniloarantes.com.br/post/">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta property="og:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@daniloarantes">
   <meta name="twitter:creator" content="@daniloarantes">
   <meta name="twitter:title" content=" | Danilo Arantes">
   <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <link rel="canonical" href="https://daniloarantes.com.br/post/">
   <link rel="alternate" type="application/rss+xml" title="Danilo Arantes" href="https://daniloarantes.com.br/post/index.xml">
   <meta name="generator" content="Hugo 0.170.1">
-  <link rel="stylesheet" href="/css/estilo.css">
+  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <script>
+     
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/site.min.9010dc13606bce6d4b3ac65738b241200c765772b3660692663741168b37ee79.css" integrity="sha256-kBDcE2Brzm1LOsZXOLJBIAx2V3KzZgaSZjdBFos37nk=">
   <title> | Danilo Arantes</title>
 </head>
 
   <body>
-    <div class="container">
-      <header class="topo">
-          <a href="/" style="flex: 1 0 0;"><img class="titulo-pagina" src="/imagens/LogoDanilo.svg"></a>
-      </header>
-      <nav class="menu">
-  
-    
-    
-    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
-  
-    
-    
-    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
-  
-    
-    
-    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
-  
-
-</nav>
-
-      <main id="main">
-      
-
-  <article class="post">
-    <header>
-      <h1><a href="/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/" class="titulo-post">Gerenciamento da Rede e Configuração do Bonding | Aula 04</a></h1>
-        20 Jan 2021
-    </header>
-    <p><p>Olá pessoal!</p>
-<p>Nesta aula irei demonstrar inicialmente como realizar o gerenciamento básico da rede com o comando IP e também como configurar uma interface de rede com endereço estático.</p>
-<p>Também mostrarei como realizar a configuração do serviço <strong>bonding</strong> para obter a redundância das interfaces de rede. Teremos duas placas de rede funcionando neste serviço e, caso a placa principal falhe, a placa secundária entrará em funcionamento.</p>
-<p>Bons estudos!</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/tEYL9-DU60g?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-		</div></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/gerenciamento_de_raid_via_software/" class="titulo-post">Gerenciamento de RAID via software no Debian | Aula 03</a></h1>
-        13 Jan 2021
-    </header>
-    <p><p>Na segunda etapa da instalação do nosso servidor Debian, realizamos a configuração dos discos como RAID 1.</p>
-<p>Nesta aula vou demonstrar para vocês como realizar os testes de funcionamento do RAID via software, procedimentos necessários para gerenciar e manter este serviço funcionando.</p>
-<h2 id="comandos-para-gerenciamento-do-raid-via-software">Comandos para gerenciamento do RAID via software</h2>
-<p>Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/instalacao-comentada-debian-raid1/" class="titulo-post">Instalação Comentada do Debian com Raid 1 | Aula 02</a></h1>
-        6 Jan 2021
-    </header>
-    <p><p>Nesta segunda aula iremos realizar a instalação do sistema GNU/Linux Debian de maneira comentada explicando todas as etapas de instalação.</p>
-<p>Este sistema será instalado utilizando RAID 1, onde teremos dois discos espelhados e sincronizados em tempo real proporcionando alta disponibilidade e segurança para os dados armazenados.</p>
-<figure class="img-centro"><img src="/imagens/raid1.png">
-</figure>
-
-<p><strong>Saiba mais sobre RAID 1 neste link:</strong>
-<a href="http://www.infortrendbrasil.com.br/tecnologia/raid-1/">http://www.infortrendbrasil.com.br/tecnologia/raid-1/</a></p>
-<p>Assista a gravação da aula e bons estudos!</p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/s3VOr_IGJWM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-		</div></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/vm-debian-raid-1/" class="titulo-post">Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</a></h1>
-        2 Jan 2021
-    </header>
-    <p><p>Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.</p>
-<p>Nesta primeira etapa abordarei a criação da máquina virtual utilizando o VirtualBox. Ela será preparada para posteriormente instalarmos o sistema operacional com RAID 1, oferecendo um backup dos dados do nosso servidor.</p>
-<p>É importante salientar que este é um cenário de estudos que também pode ser implantado em um servidor real e as configurações mostradas são exemplos, podendo ser modificadas e aperfeiçoadas para várias necessidades.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/desabilitar-bluetooth/" class="titulo-post">Desabilitando o Bluetooth na inicialização do Debian</a></h1>
-        6 Mar 2018
-    </header>
-    <p><p>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.</p>
-<p><strong>Para sistemas com SYSTEMD</strong></p>
-<p>Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:</p>
-<p>1º - Verificar o status do Bluetooth</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status bluetooth
-</span></span></code></pre></div><p>Serão retornadas mensagens sobre o status de funcionamento do serviço.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/atualizando-debian-stretch-para-buster/" class="titulo-post">Atualizando Debian Stretch para Buster</a></h1>
-        23 Oct 2017
-    </header>
-    <p><p>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.</p>
-<p>Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.</p>
-<p>Para isso, utilizei o comando <strong>sed</strong> para modificar a versão dos repositórios no arquivo <strong>/etc/apt/sources.list</strong> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> sed -i <span style="color:#ba2121">&#39;s/Stretch/Buster/g&#39;</span> /etc/apt/sources.list
-</span></span></code></pre></div><p><strong>Atenção:</strong> você pode ter algum repositório que necessite permanecer na versão Stretch. Se executou o comando acima, acesse o arquivo sources.list com o editor de textos e modifique o que for necessário.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/docker-failed-to-register-layer/" class="titulo-post">Correção de erro &#39;failed to register layer&#39; no Docker</a></h1>
-        12 Oct 2017
-    </header>
-    <p><p><img src="../../imagens/docker.png" alt="Docker"></p>
-<p>O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.</p>
-<p>Em uma das aventuras, ao tentar fazer o <strong>pull</strong> de um container com Evernote, me deparei com a seguinte mensagem de erro:</p>
-<blockquote>
-<p>&ldquo;failed to register layer: symlink&hellip;&rdquo;</p>
-</blockquote>
-<p>E eu não conseguia finalizar o processo de forma alguma.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/ipv4ipv6/" class="titulo-post">Um pouco sobre IPv4 e IPv6</a></h1>
-        14 Aug 2017
-    </header>
-    <p><h2 id="ipv4"><strong>IPv4</strong></h2>
-<p>A dificuldade atual do IPv4 é a limitação dos endereços de IP. O grande problema é que os endereços são sempre divididos em duas partes: Rede e Host.</p>
-<p>Nos endereços de classe A, o primeiro octeto se refere à Rede e os três octetos seguintes referem-se ao Host.</p>
-<p>Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a governos, instituições e até mesmo algumas empresas privadas, como por exemplo, a IBM.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/tipos-de-arquivos-no-linux/" class="titulo-post">Tipos de arquivos no Linux</a></h1>
-        5 Jul 2017
-    </header>
-    <p><p>No linux, um arquivo pode se subdividir em um dos seguinte stipos:</p>
-<ul>
-<li>Arquivos Comuns</li>
-<li>Diretórios</li>
-<li>Links</li>
-<li>Device Files</li>
-<li>Sockets</li>
-<li>Pipes</li>
-</ul>
-<p>Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/compiladores-e-interpretadores/" class="titulo-post">Compiladores e Interpretadores</a></h1>
-        27 Jun 2017
-    </header>
-    <p><p>A maneira de se comunicar com um computador chama-se programa e a única linguagem que o computador entende chama-se <em>linguagem de máquina</em>. Portanto todos os programas que se comunicam com a máquina devem estar em linguagem de máquina.</p>
-<p>A forma como os programas são traduzidos para a linguagem de máquina classifica-os em duas categorias:</p>
-<ul>
-<li>Interpretados</li>
-<li>Compilados</li>
-</ul>
-<p>Os programas que fazem estas traduções são chamados <em>interpretadores</em> e <em>Compiladores</em>.</p>
-<h3 id="interpretadores"><strong>INTERPRETADORES</strong></h3>
-<p>Um interpretador lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro converte-a para linguagem de máquina para finalmente executá-la. Segue, então, para a próxima instrução, repetindo o processo até que a última instrução seja executada ou a consistência aponte algum erro.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/cluster-de-computadores/" class="titulo-post">O que é um Cluster de Computadores?</a></h1>
-        19 Jun 2017
-    </header>
-    <p><p>Este é o trecho de um artigo meu sobre Redundância e Replicação de dados utilizando MySQL e MySQL Cluster. O desenvolvimento do artigo foi baseado em um cluster responsável pelo gerenciamento do banco de dados - em outro post falarei mais sobre esse trabalho com exemplo e aplicação prática.</p>
-<h2 id="cluster-8211-conceito"><strong>Cluster – Conceito</strong></h2>
-<p>Os clusters podem ser utilizados em diversas aplicações, como por exemplo, renderização de efeitos especiais, meteorologia, simulações, etc.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/autofs/" class="titulo-post">Configurando o Automount (Autofs)</a></h1>
-        15 Jun 2017
-    </header>
-    <p><p>A montagem automática é utilizada como um sistema de montagem sob demanda.</p>
-<p>Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.</p>
-<p>Inicialmente, instale o pacote autofs:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt-get install autofs
-</span></span></code></pre></div><p>Principal arquivo de configuração: <strong>/etc/auto.master</strong></p>
-<h2 id="configurando-automount"><strong>Configurando automount:</strong></h2>
-<p>Edite o arquivo /etc/auto.master</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/auto.master
-</span></span></code></pre></div><p>Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</p></p>
-  </article>
-
-
-
-    
-  <article class="post">
-    <header>
-      <h1><a href="/post/cpio/" class="titulo-post">Criando Arquivamentos com CPIO</a></h1>
-        15 Jun 2017
-    </header>
-    <p><p>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.</p>
-<p>Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.</p>
-<p>Com este comando, várias atividades são facilitadas, como por exemplo:</p>
-<ul>
-<li>Copiar arquivos para um arquivamento;</li>
-<li>Extrair arquivos de um arquivamento;</li>
-<li>Copiar arquivos para outra estrutura de diretórios.</li>
-</ul>
-<p>Alguns parâmetros utilizados com o CPIO:</p>
-<ul>
-<li><strong>-i</strong> - Extrair backup</li>
-<li><strong>-o</strong> - Cria backup</li>
-<li><strong>-t</strong> - Mostra o conteúdo do backup</li>
-<li><strong>-F</strong> - Especifica o arquivo de Backup</li>
-<li><strong>-d</strong> - Cria diretórios se necessário</li>
-<li><strong>-v</strong> - Modo Verboso – Mostra na tela as ações</li>
-<li><strong>-p</strong> - Ativa o modo de cópia</li>
-</ul>
-<h2 id="criando-cenário-para-teste"><strong>Criando cenário para teste:</strong></h2>
-<p>Execute os comandos abaixo para criar o cenário que será utilizado para teste:</p></p>
-  </article>
-
-
-
-    
-
-
-      </main>
-
-    </div>
-
-  </body>
-  
-<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
+    <div class="faixa" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <header class="topo wrap">
+  <a class="marca" href="/" aria-label="Danilo Arantes — página inicial">
+    <span>Danilo Arantes</span><i aria-hidden="true"></i>
+  </a>
+  <div class="topo-acoes">
+  <nav class="menu" aria-label="Principal">
+      <a href="/post/" aria-current="page">Blog</a>
+      <a href="/#serie">Aulas</a>
+      <a href="/sobre/">Sobre</a>
+  </nav>
+  <button class="tema" type="button" id="tema" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+  </div>
+</header>
 <script>
-  feather.replace()
+  (function () {
+    var raiz = document.documentElement;
+    var botao = document.getElementById('tema');
+    var escuroSistema = window.matchMedia('(prefers-color-scheme: dark)');
+    function atual() {
+      return raiz.getAttribute('data-theme') || (escuroSistema.matches ? 'dark' : 'light');
+    }
+    function rotular() {
+      var escuro = atual() === 'dark';
+      botao.setAttribute('aria-pressed', escuro ? 'true' : 'false');
+      botao.setAttribute('aria-label', escuro ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+      botao.title = botao.getAttribute('aria-label');
+    }
+    botao.addEventListener('click', function () {
+      var novo = atual() === 'dark' ? 'light' : 'dark';
+      raiz.setAttribute('data-theme', novo);
+      try { localStorage.setItem('tema', novo); } catch (e) {}
+      rotular();
+    });
+    escuroSistema.addEventListener('change', rotular);
+    rotular();
+  })();
 </script>
 
+    <main class="wrap" id="main">
+      
+<section class="secao secao-pagina">
+  <div class="secao-topo">
+    <div class="secao-titulo">
+      <span class="kicker" style="--h:255">Blog</span>
+      <h1>Publicações</h1>
+    </div>
+  </div>
+  
+<div class="filtros" role="group" aria-label="Filtrar por categoria">
+  <button type="button" data-filtro="Todos" aria-pressed="true">Todos</button>
+  <button type="button" data-filtro="Linux" aria-pressed="false" style="--h:150">Linux</button>
+  <button type="button" data-filtro="Redes" aria-pressed="false" style="--h:255">Redes</button>
+  <button type="button" data-filtro="Servidores" aria-pressed="false" style="--h:305">Servidores</button>
+  <button type="button" data-filtro="Docker" aria-pressed="false" style="--h:220">Docker</button>
+  <button type="button" data-filtro="Fundamentos" aria-pressed="false" style="--h:55">Fundamentos</button>
+</div>
+<div class="lista">
+    
+<a class="linha" href="/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/" data-cat="Redes" style="--h:255">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Redes</span>
+    <time datetime="2021-01-20">20 de jan. de 2021</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Gerenciamento da Rede e Configuração do Bonding | Aula 04</span>
+    <span class="linha-resumo">Gerenciamento básico com o comando ip, interface com IP estático e bonding para redundância das placas de rede.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/gerenciamento_de_raid_via_software/" data-cat="Servidores" style="--h:305">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Servidores</span>
+    <time datetime="2021-01-13">13 de jan. de 2021</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Gerenciamento de RAID via software no Debian | Aula 03</span>
+    <span class="linha-resumo">Testes de funcionamento do RAID via software e os comandos do mdadm para manter o serviço ativo.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/instalacao-comentada-debian-raid1/" data-cat="Servidores" style="--h:305">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Servidores</span>
+    <time datetime="2021-01-06">6 de jan. de 2021</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Instalação Comentada do Debian com Raid 1 | Aula 02</span>
+    <span class="linha-resumo">Instalação do Debian etapa por etapa, com dois discos espelhados e sincronizados em tempo real.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/vm-debian-raid-1/" data-cat="Servidores" style="--h:305">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Servidores</span>
+    <time datetime="2021-01-02">2 de jan. de 2021</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</span>
+    <span class="linha-resumo">Criação e preparo da VM que receberá o servidor Debian com RAID 1.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/desabilitar-bluetooth/" data-cat="Linux" style="--h:150">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Linux</span>
+    <time datetime="2018-03-06">6 de mar. de 2018</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Desabilitando o Bluetooth na inicialização do Debian</span>
+    <span class="linha-resumo">Economize bateria do notebook desativando o serviço com systemctl.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/atualizando-debian-stretch-para-buster/" data-cat="Linux" style="--h:150">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Linux</span>
+    <time datetime="2017-10-23">23 de out. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Atualizando Debian Stretch para Buster</span>
+    <span class="linha-resumo">Alterando os repositórios com sed e conduzindo a atualização com segurança.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/docker-failed-to-register-layer/" data-cat="Docker" style="--h:220">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Docker</span>
+    <time datetime="2017-10-12">12 de out. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Correção de erro &#39;failed to register layer&#39; no Docker</span>
+    <span class="linha-resumo">Como resolver a falha de symlink ao fazer pull de um container.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/ipv4ipv6/" data-cat="Redes" style="--h:255">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Redes</span>
+    <time datetime="2017-08-14">14 de ago. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Um pouco sobre IPv4 e IPv6</span>
+    <span class="linha-resumo">As limitações de endereçamento do IPv4, classes de rede e a chegada do IPv6.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/tipos-de-arquivos-no-linux/" data-cat="Linux" style="--h:150">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Linux</span>
+    <time datetime="2017-07-05">5 de jul. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Tipos de arquivos no Linux</span>
+    <span class="linha-resumo">Arquivos comuns, diretórios, links, device files, sockets e pipes.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/compiladores-e-interpretadores/" data-cat="Fundamentos" style="--h:55">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Fundamentos</span>
+    <time datetime="2017-06-27">27 de jun. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Compiladores e Interpretadores</span>
+    <span class="linha-resumo">Como os programas são traduzidos para linguagem de máquina.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/cluster-de-computadores/" data-cat="Servidores" style="--h:305">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Servidores</span>
+    <time datetime="2017-06-19">19 de jun. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">O que é um Cluster de Computadores?</span>
+    <span class="linha-resumo">Conceitos de cluster a partir de um artigo sobre replicação com MySQL Cluster.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/autofs/" data-cat="Linux" style="--h:150">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Linux</span>
+    <time datetime="2017-06-15">15 de jun. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Configurando o Automount (Autofs)</span>
+    <span class="linha-resumo">Montagem sob demanda de compartilhamentos remotos com autofs.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+    
+<a class="linha" href="/post/cpio/" data-cat="Linux" style="--h:150">
+  <span class="linha-meta">
+    <span class="cat"><i aria-hidden="true"></i>Linux</span>
+    <time datetime="2017-06-15">15 de jun. de 2017</time>
+  </span>
+  <span class="linha-texto">
+    <span class="linha-titulo">Criando Arquivamentos com CPIO</span>
+    <span class="linha-resumo">Criar, listar e extrair arquivamentos com o comando cpio.</span>
+  </span>
+  <span class="seta" aria-hidden="true">→</span>
+</a>
+
+</div>
+<script>
+  (function () {
+    var botoes = document.querySelectorAll('[data-filtro]');
+    var linhas = document.querySelectorAll('.lista .linha');
+    botoes.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.dataset.filtro;
+        botoes.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        linhas.forEach(function (l) { l.hidden = f !== 'Todos' && l.dataset.cat !== f; });
+      });
+    });
+  })();
+</script>
+
+</section>
+
+    </main>
+    <footer class="rodape">
+  <div class="wrap">
+    <span>© 2026 Danilo Arantes</span>
+    <nav aria-label="Links">
+      <a href="https://twitter.com/daniloarantes">Twitter</a>
+      <a href="https://www.youtube.com/watch?v=tEYL9-DU60g">YouTube</a>
+      <a href="/tags/">Tags</a>
+      <a href="/index.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
+
+  </body>
 </html>

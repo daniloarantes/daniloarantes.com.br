@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
+<html lang="pt-BR">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão. Vale lembrar que o CPIO apenas …">
+  <meta name="description" content="Criar, listar e extrair arquivamentos com o comando cpio.">
   <meta name="keywords" content="Linux">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Criando Arquivamentos com CPIO | Danilo Arantes">
-  <meta property="og:description" content="O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão. Vale lembrar que o CPIO apenas …">
+  <meta property="og:description" content="Criar, listar e extrair arquivamentos com o comando cpio.">
   <meta property="og:site_name" content="Danilo Arantes">
   <meta property="og:url" content="https://daniloarantes.com.br/post/cpio/">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta property="og:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <meta property="article:tag" content="Linux">
   <meta property="article:published_time" content="2017-06-15">
   <meta property="article:modified_time" content="2017-06-15">
@@ -20,60 +20,89 @@
   <meta name="twitter:site" content="@daniloarantes">
   <meta name="twitter:creator" content="@daniloarantes">
   <meta name="twitter:title" content="Criando Arquivamentos com CPIO | Danilo Arantes">
-  <meta name="twitter:description" content="O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão. Vale lembrar que o CPIO apenas …">
-  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta name="twitter:description" content="Criar, listar e extrair arquivamentos com o comando cpio.">
+  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <link rel="canonical" href="https://daniloarantes.com.br/post/cpio/">
   
   <meta name="generator" content="Hugo 0.170.1">
-  <link rel="stylesheet" href="/css/estilo.css">
+  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <script>
+     
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/site.min.9010dc13606bce6d4b3ac65738b241200c765772b3660692663741168b37ee79.css" integrity="sha256-kBDcE2Brzm1LOsZXOLJBIAx2V3KzZgaSZjdBFos37nk=">
   <title>Criando Arquivamentos com CPIO | Danilo Arantes</title>
 </head>
 
   <body>
-    <div class="container">
-      <header class="topo">
-          <a href="/" style="flex: 1 0 0;"><img class="titulo-pagina" src="/imagens/LogoDanilo.svg"></a>
-      </header>
-      <nav class="menu">
-  
-    
-    
-    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
-  
-    
-    
-    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
-  
-    
-    
-    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
-  
+    <div class="faixa" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <header class="topo wrap">
+  <a class="marca" href="/" aria-label="Danilo Arantes — página inicial">
+    <span>Danilo Arantes</span><i aria-hidden="true"></i>
+  </a>
+  <div class="topo-acoes">
+  <nav class="menu" aria-label="Principal">
+      <a href="/post/" aria-current="page">Blog</a>
+      <a href="/#serie">Aulas</a>
+      <a href="/sobre/">Sobre</a>
+  </nav>
+  <button class="tema" type="button" id="tema" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+  </div>
+</header>
+<script>
+  (function () {
+    var raiz = document.documentElement;
+    var botao = document.getElementById('tema');
+    var escuroSistema = window.matchMedia('(prefers-color-scheme: dark)');
+    function atual() {
+      return raiz.getAttribute('data-theme') || (escuroSistema.matches ? 'dark' : 'light');
+    }
+    function rotular() {
+      var escuro = atual() === 'dark';
+      botao.setAttribute('aria-pressed', escuro ? 'true' : 'false');
+      botao.setAttribute('aria-label', escuro ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+      botao.title = botao.getAttribute('aria-label');
+    }
+    botao.addEventListener('click', function () {
+      var novo = atual() === 'dark' ? 'light' : 'dark';
+      raiz.setAttribute('data-theme', novo);
+      try { localStorage.setItem('tema', novo); } catch (e) {}
+      rotular();
+    });
+    escuroSistema.addEventListener('change', rotular);
+    rotular();
+  })();
+</script>
 
-</nav>
-
-      <main id="main">
+    <main class="wrap" id="main">
       
-        <article class="post">
-          <header>
-            <h1 class="titulo-post">Criando Arquivamentos com CPIO</h1>
-            
+<article class="artigo">
+  <header class="artigo-topo">
+    <div class="artigo-meta">
+      <a class="cat" href="/post/" style="--h:150"><i aria-hidden="true"></i>Linux</a>
+      <time datetime="2017-06-15">15 de junho de 2017</time>
+    </div>
+    <h1>Criando Arquivamentos com CPIO</h1>
+    <ul class="pilulas" aria-label="Tags">
+      <li><a href="/tags/linux/">#Linux</a></li>
+    </ul>
+  </header>
 
-<p id="tags">
-  <i data-feather="calendar"></i>Atualizado em: <time datetime="2017-06-15">Jun 15, 2017</time>
-
-
-
-  <i id="icon" data-feather="tag"></i>
-
-  
-  
-  <a class="tag" href="https://daniloarantes.com.br/tags/linux">Linux</a>
-  
-
-
-<br><br>
-          </header>
-          <p>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.</p>
+  <div class="prosa">
+    <p>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.</p>
 <p>Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.</p>
 <p>Com este comando, várias atividades são facilitadas, como por exemplo:</p>
 <ul>
@@ -93,55 +122,63 @@
 </ul>
 <h2 id="criando-cenário-para-teste"><strong>Criando cenário para teste:</strong></h2>
 <p>Execute os comandos abaixo para criar o cenário que será utilizado para teste:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir Exemplo
-</span></span><span style="display:flex;"><span><span style="color:#008000">cd</span> Exemplo/
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir Exemplo
+</span></span><span style="display:flex;"><span>cd Exemplo/
 </span></span><span style="display:flex;"><span>touch arquivo1 arquivo2 arquivo3
 </span></span></code></pre></div><h2 id="criando-arquivamentos"><strong>Criando Arquivamentos</strong></h2>
 <p>Para criar um arquivamento com o CPIO, utilize os parâmetros <strong>-ov</strong> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -ov &gt; ../arquivo.cpio
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -ov &gt; ../arquivo.cpio
 </span></span></code></pre></div><p>Se você estiver fora do diretório Exemplo, faça o seguinte:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find Exemplo/ -name <span style="color:#ba2121">&#39;arq*&#39;</span> | cpio -ov &gt; arquivo2.cpio
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find Exemplo/ -name <span style="color:#a5d6ff">&#39;arq*&#39;</span> | cpio -ov &gt; arquivo2.cpio
 </span></span></code></pre></div><p>No exemplo acima estamos criando o arquivo.cpio e arquivo2.cpio contendo arquivo1 arquivo2 arquivo3.</p>
 <h2 id="extraindo-arquivamentos"><strong>Extraindo Arquivamentos</strong></h2>
 <p>Para extrair o conteúdo de um arquivamento, utilize os parâmetros <strong>-idv</strong> :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir Exemplo2
-</span></span><span style="display:flex;"><span><span style="color:#008000">cd</span> Exemplo2
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir Exemplo2
+</span></span><span style="display:flex;"><span>cd Exemplo2
 </span></span><span style="display:flex;"><span>cpio -idv &lt; ../arquivo.cpio
 </span></span></code></pre></div><p>No exemplo acima, extraímos o conteúdo de arquivo.cpio dentro do diretório Exemplo2.</p>
 <p><strong>OBS: O CPIO só extrairá os arquivos caso os arquivos de destino sejam mais velhos dos que estão no arquivamento.</strong></p>
 <h2 id="visualizando-o-conteúdo-de-um-arquivamentos"><strong>Visualizando o conteúdo de um arquivamentos</strong></h2>
 <p>É possível exibir na tela o conteúdo de um arquivamento sem extrair qualquer arquivo, como mostra o exemplo abaixo:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -t &lt; arquivo.cpio
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -t &lt; arquivo.cpio
 </span></span></code></pre></div><h2 id="extraindo-um-arquivo-específico-de-um-arquivamentos"><strong>Extraindo um arquivo específico de um arquivamentos</strong></h2>
 <p>Caso haja a necessidade de extrair um arquivo específico de um arquivamento, utilize o parâmetro -iF :</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -iF arquivo.cpio arquivo1
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -iF arquivo.cpio arquivo1
 </span></span></code></pre></div><h2 id="criando-arquivos-tar-com-cpio"><strong>Criando arquivos .tar com CPIO</strong></h2>
 <p>Com o CPIO também é possível criar arquivos com a extensão .tar:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#008000">cd</span> Exemplo/
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd Exemplo/
 </span></span><span style="display:flex;"><span>ls | cpio -ov -H tar -F ../arquivo3.tar
 </span></span></code></pre></div><h2 id="extraindo-arquivos-tar-com-cpio"><strong>Extraindo arquivos .tar com CPIO</strong></h2>
 <p>Para extrair um arquivamento .tar, faça como o exemplo abaixo:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -idv -F arquivo3.tar
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -idv -F arquivo3.tar
 </span></span></code></pre></div><h2 id="visualizando-o-conteúdo-de-arquivos-tar-com-cpio"><strong>Visualizando o conteúdo de arquivos .tar com CPIO</strong></h2>
 <p>Também é possível apenas exibir na tela o conteúdo de um arquivo .tar:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -it -F arquivo3.tar
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cpio -it -F arquivo3.tar
 </span></span></code></pre></div><h2 id="fazendo-cópias-de-diretórios-e-subdiretórios-com-cpio"><strong>Fazendo cópias de diretórios e subdiretórios com CPIO</strong></h2>
 <p>Uma das possibilidades do CPIO é a cópia de estruturas de diretórios para outra localidade:</p>
-<div class="highlight"><pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -depth | cpio -pmdv /root/arquivos
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -depth | cpio -pmdv /root/arquivos
 </span></span></code></pre></div><h3 id="referência"><strong>Referência:</strong></h3>
 <p><a href="http://www.thegeekstuff.com/2010/08/cpio-utility/">The Geek Stuff</a> (acessado em 17/11/2015 às 20:00)</p>
 
-        </article>
-  
-      </main>
+  </div>
 
-    </div>
+  <footer class="artigo-fim">
+    <a class="link-forte voltar" href="/post/">← Todas as publicações</a>
+  </footer>
+</article>
+
+    </main>
+    <footer class="rodape">
+  <div class="wrap">
+    <span>© 2026 Danilo Arantes</span>
+    <nav aria-label="Links">
+      <a href="https://twitter.com/daniloarantes">Twitter</a>
+      <a href="https://www.youtube.com/watch?v=tEYL9-DU60g">YouTube</a>
+      <a href="/tags/">Tags</a>
+      <a href="/index.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
 
   </body>
-  
-<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
-<script>
-  feather.replace()
-</script>
-
 </html>

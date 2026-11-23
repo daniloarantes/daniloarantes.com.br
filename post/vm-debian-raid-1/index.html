@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
+<html lang="pt-BR">
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Criação de Máquina Virtual para instalação do Debian">
+  <meta name="description" content="Criação e preparo da VM que receberá o servidor Debian com RAID 1.">
   <meta name="keywords" content="Linux, Servidor Linux">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01 | Danilo Arantes">
-  <meta property="og:description" content="Criação de Máquina Virtual para instalação do Debian">
+  <meta property="og:description" content="Criação e preparo da VM que receberá o servidor Debian com RAID 1.">
   <meta property="og:site_name" content="Danilo Arantes">
   <meta property="og:url" content="https://daniloarantes.com.br/post/vm-debian-raid-1/">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta property="og:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <meta property="article:tag" content="Linux">
   <meta property="article:tag" content="Servidor Linux">
   <meta property="article:published_time" content="2021-01-02">
@@ -21,63 +21,107 @@
   <meta name="twitter:site" content="@daniloarantes">
   <meta name="twitter:creator" content="@daniloarantes">
   <meta name="twitter:title" content="Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01 | Danilo Arantes">
-  <meta name="twitter:description" content="Criação de Máquina Virtual para instalação do Debian">
-  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/Danilo_Arantes.jpg">
+  <meta name="twitter:description" content="Criação e preparo da VM que receberá o servidor Debian com RAID 1.">
+  <meta name="twitter:image" content="https://daniloarantes.com.br/imagens/danilo-github.jpg">
   <link rel="canonical" href="https://daniloarantes.com.br/post/vm-debian-raid-1/">
   
   <meta name="generator" content="Hugo 0.170.1">
-  <link rel="stylesheet" href="/css/estilo.css">
+  <meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <script>
+     
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/css/site.min.9010dc13606bce6d4b3ac65738b241200c765772b3660692663741168b37ee79.css" integrity="sha256-kBDcE2Brzm1LOsZXOLJBIAx2V3KzZgaSZjdBFos37nk=">
   <title>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01 | Danilo Arantes</title>
 </head>
 
   <body>
-    <div class="container">
-      <header class="topo">
-          <a href="/" style="flex: 1 0 0;"><img class="titulo-pagina" src="/imagens/LogoDanilo.svg"></a>
-      </header>
-      <nav class="menu">
-  
-    
-    
-    <a href="/post/" class="item-menu"><i data-feather="edit"></i> Blog</a>
-  
-    
-    
-    <a href="/tags/" class="item-menu"><i data-feather="tag"></i> Tags</a>
-  
-    
-    
-    <a href="/sobre/" class="item-menu"><i data-feather="user"></i> Sobre</a>
-  
+    <div class="faixa" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <header class="topo wrap">
+  <a class="marca" href="/" aria-label="Danilo Arantes — página inicial">
+    <span>Danilo Arantes</span><i aria-hidden="true"></i>
+  </a>
+  <div class="topo-acoes">
+  <nav class="menu" aria-label="Principal">
+      <a href="/post/" aria-current="page">Blog</a>
+      <a href="/#serie">Aulas</a>
+      <a href="/sobre/">Sobre</a>
+  </nav>
+  <button class="tema" type="button" id="tema" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro">
+    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+  </button>
+  </div>
+</header>
+<script>
+  (function () {
+    var raiz = document.documentElement;
+    var botao = document.getElementById('tema');
+    var escuroSistema = window.matchMedia('(prefers-color-scheme: dark)');
+    function atual() {
+      return raiz.getAttribute('data-theme') || (escuroSistema.matches ? 'dark' : 'light');
+    }
+    function rotular() {
+      var escuro = atual() === 'dark';
+      botao.setAttribute('aria-pressed', escuro ? 'true' : 'false');
+      botao.setAttribute('aria-label', escuro ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+      botao.title = botao.getAttribute('aria-label');
+    }
+    botao.addEventListener('click', function () {
+      var novo = atual() === 'dark' ? 'light' : 'dark';
+      raiz.setAttribute('data-theme', novo);
+      try { localStorage.setItem('tema', novo); } catch (e) {}
+      rotular();
+    });
+    escuroSistema.addEventListener('change', rotular);
+    rotular();
+  })();
+</script>
 
-</nav>
-
-      <main id="main">
+    <main class="wrap" id="main">
       
-        <article class="post">
-          <header>
-            <h1 class="titulo-post">Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</h1>
-            
+<article class="artigo">
+  <header class="artigo-topo">
+    <div class="artigo-meta">
+      <a class="cat" href="/post/" style="--h:305"><i aria-hidden="true"></i>Servidores</a>
+      <time datetime="2021-01-02">2 de janeiro de 2021</time>
+    </div>
+    <h1>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</h1>
+    <ul class="pilulas" aria-label="Tags">
+      <li><a href="/tags/linux/">#Linux</a></li>
+      <li><a href="/tags/servidor-linux/">#Servidor Linux</a></li>
+    </ul>
+  </header>
+  <nav class="serie-box" aria-label="Série Servidor Debian do zero">
+    <span class="kicker" style="--h:150">Série · Servidor Debian do zero</span>
+    <ol>
+      <li aria-current="page">
+        <a href="/post/vm-debian-raid-1/"><b>01</b>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1</a>
+      </li>
+      <li>
+        <a href="/post/instalacao-comentada-debian-raid1/"><b>02</b>Instalação Comentada do Debian com Raid 1</a>
+      </li>
+      <li>
+        <a href="/post/gerenciamento_de_raid_via_software/"><b>03</b>Gerenciamento de RAID via software no Debian</a>
+      </li>
+      <li>
+        <a href="/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/"><b>04</b>Gerenciamento da Rede e Configuração do Bonding</a>
+      </li>
+    </ol>
+  </nav>
 
-<p id="tags">
-  <i data-feather="calendar"></i>Atualizado em: <time datetime="2021-01-02">Jan 2, 2021</time>
-
-
-
-  <i id="icon" data-feather="tag"></i>
-
-  
-  
-  <a class="tag" href="https://daniloarantes.com.br/tags/linux">Linux</a>
-  
-  
-  <a class="tag" href="https://daniloarantes.com.br/tags/servidor-linux">Servidor Linux</a>
-  
-
-
-<br><br>
-          </header>
-          <p>Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.</p>
+  <div class="prosa">
+    <p>Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.</p>
 <p>Nesta primeira etapa abordarei a criação da máquina virtual utilizando o VirtualBox. Ela será preparada para posteriormente instalarmos o sistema operacional com RAID 1, oferecendo um backup dos dados do nosso servidor.</p>
 <p>É importante salientar que este é um cenário de estudos que também pode ser implantado em um servidor real e as configurações mostradas são exemplos, podendo ser modificadas e aperfeiçoadas para várias necessidades.</p>
 <p>Bons estudos!</p>
@@ -86,17 +130,25 @@
 		</div>
 
 
-        </article>
-  
-      </main>
+  </div>
 
-    </div>
+  <footer class="artigo-fim"><a class="nav-prox" href="/post/instalacao-comentada-debian-raid1/"><small>Próxima aula →</small>Instalação Comentada do Debian com Raid 1</a>
+    <a class="link-forte voltar" href="/post/">← Todas as publicações</a>
+  </footer>
+</article>
+
+    </main>
+    <footer class="rodape">
+  <div class="wrap">
+    <span>© 2026 Danilo Arantes</span>
+    <nav aria-label="Links">
+      <a href="https://twitter.com/daniloarantes">Twitter</a>
+      <a href="https://www.youtube.com/watch?v=tEYL9-DU60g">YouTube</a>
+      <a href="/tags/">Tags</a>
+      <a href="/index.xml">RSS</a>
+    </nav>
+  </div>
+</footer>
 
   </body>
-  
-<script src="https://daniloarantes.com.br/js/feather.min.js"></script>
-<script>
-  feather.replace()
-</script>
-
 </html>
