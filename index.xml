@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 25 Jun 2023 19:24:00 -0300</lastBuildDate>
+			<lastBuildDate>Mon, 16 Sep 2024 00:00:00 -0300</lastBuildDate>
 		
 			<atom:link href="https://daniloarantes.com.br/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Aplicativos móveis</title>
+				<link>https://daniloarantes.com.br/livro/</link>
+				<pubDate>Mon, 16 Sep 2024 00:00:00 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/livro/</guid>
+				<description>&lt;p&gt;Agendar uma consulta médica, acompanhar o treino na academia, estudar, meditar, controlar e planejar: quantas vezes pegamos nosso smartphone para alguma atividade corriqueira? Ou melhor: quantas vezes pesquisamos e utilizamos um app para facilitar uma tarefa pessoal?&lt;/p&gt;&#xA;&lt;p&gt;Também chamados de apps mobile, os aplicativos móveis fazem parte de inúmeros aspectos do cotidiano, sejam relacionados a saúde, educação, entretenimento, transporte ou mesmo à vida financeira. E sua função é simples: oferecer um sistema intuitivo, funcional e acessível. O que muitos não sabem é que existe uma série de conhecimentos e habilidades por trás da criação desses softwares.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Sobre mim</title>
 				<link>https://daniloarantes.com.br/sobre/</link>
