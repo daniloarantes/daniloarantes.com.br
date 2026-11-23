@@ -1,172 +1,108 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Danilo Arantes</title>
-    <link>https://daniloarantes.com.br/post/</link>
-    <description>Recent content on Danilo Arantes</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt-br</language>
-    <lastBuildDate>Wed, 20 Jan 2021 19:32:42 -0300</lastBuildDate><atom:link href="https://daniloarantes.com.br/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Gerenciamento da Rede e Configuração do Bonding | Aula 04</title>
-      <link>https://daniloarantes.com.br/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</link>
-      <pubDate>Wed, 20 Jan 2021 19:32:42 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</guid>
-      <description>Olá pessoal!
-Nesta aula irei demonstrar inicialmente como realizar o gerenciamento básico da rede com o comando IP e também como configurar uma interface de rede com endereço estático.
-Também mostrarei como realizar a configuração do serviço bonding para obter a redundância das interfaces de rede. Teremos duas placas de rede funcionando neste serviço e, caso a placa principal falhe, a placa secundária entrará em funcionamento.
-Bons estudos!</description>
-    </item>
-    
-    <item>
-      <title>Gerenciamento de RAID via software no Debian | Aula 03</title>
-      <link>https://daniloarantes.com.br/post/gerenciamento_de_raid_via_software/</link>
-      <pubDate>Wed, 13 Jan 2021 20:06:45 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/gerenciamento_de_raid_via_software/</guid>
-      <description>Na segunda etapa da instalação do nosso servidor Debian, realizamos a configuração dos discos como RAID 1.
-Nesta aula vou demonstrar para vocês como realizar os testes de funcionamento do RAID via software, procedimentos necessários para gerenciar e manter este serviço funcionando.
-Comandos para gerenciamento do RAID via software Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.</description>
-    </item>
-    
-    <item>
-      <title>Instalação Comentada do Debian com Raid 1 | Aula 02</title>
-      <link>https://daniloarantes.com.br/post/instalacao-comentada-debian-raid1/</link>
-      <pubDate>Wed, 06 Jan 2021 10:30:54 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/instalacao-comentada-debian-raid1/</guid>
-      <description>Nesta segunda aula iremos realizar a instalação do sistema GNU/Linux Debian de maneira comentada explicando todas as etapas de instalação.
-Este sistema será instalado utilizando RAID 1, onde teremos dois discos espelhados e sincronizados em tempo real proporcionando alta disponibilidade e segurança para os dados armazenados.
-Saiba mais sobre RAID 1 neste link: http://www.infortrendbrasil.com.br/tecnologia/raid-1/
-Assista a gravação da aula e bons estudos!</description>
-    </item>
-    
-    <item>
-      <title>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</title>
-      <link>https://daniloarantes.com.br/post/vm-debian-raid-1/</link>
-      <pubDate>Sat, 02 Jan 2021 12:30:00 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/vm-debian-raid-1/</guid>
-      <description>Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.
-Nesta primeira etapa abordarei a criação da máquina virtual utilizando o VirtualBox. Ela será preparada para posteriormente instalarmos o sistema operacional com RAID 1, oferecendo um backup dos dados do nosso servidor.
-É importante salientar que este é um cenário de estudos que também pode ser implantado em um servidor real e as configurações mostradas são exemplos, podendo ser modificadas e aperfeiçoadas para várias necessidades.</description>
-    </item>
-    
-    <item>
-      <title>Desabilitando o Bluetooth na inicialização do Debian</title>
-      <link>https://daniloarantes.com.br/post/desabilitar-bluetooth/</link>
-      <pubDate>Tue, 06 Mar 2018 11:02:07 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/desabilitar-bluetooth/</guid>
-      <description>Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.
-Para sistemas com SYSTEMD
-Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:
-1º - Verificar o status do Bluetooth
-systemctl status bluetooth Serão retornadas mensagens sobre o status de funcionamento do serviço.</description>
-    </item>
-    
-    <item>
-      <title>Atualizando Debian Stretch para Buster</title>
-      <link>https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/</link>
-      <pubDate>Mon, 23 Oct 2017 17:00:00 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/</guid>
-      <description>Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.
-Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.
-Para isso, utilizei o comando sed para modificar a versão dos repositórios no arquivo /etc/apt/sources.list :
-sed -i &amp;#39;s/Stretch/Buster/g&amp;#39; /etc/apt/sources.list Atenção: você pode ter algum repositório que necessite permanecer na versão Stretch.</description>
-    </item>
-    
-    <item>
-      <title>Correção de erro &#39;failed to register layer&#39; no Docker</title>
-      <link>https://daniloarantes.com.br/post/docker-failed-to-register-layer/</link>
-      <pubDate>Thu, 12 Oct 2017 18:02:42 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/docker-failed-to-register-layer/</guid>
-      <description>O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.
-Em uma das aventuras, ao tentar fazer o pull de um container com Evernote, me deparei com a seguinte mensagem de erro:
-&amp;ldquo;failed to register layer: symlink&amp;hellip;&amp;rdquo;
-E eu não conseguia finalizar o processo de forma alguma.</description>
-    </item>
-    
-    <item>
-      <title>Um pouco sobre IPv4 e IPv6</title>
-      <link>https://daniloarantes.com.br/post/ipv4ipv6/</link>
-      <pubDate>Mon, 14 Aug 2017 14:32:42 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/ipv4ipv6/</guid>
-      <description>IPv4 A dificuldade atual do IPv4 é a limitação dos endereços de IP. O grande problema é que os endereços são sempre divididos em duas partes: Rede e Host.
-Nos endereços de classe A, o primeiro octeto se refere à Rede e os três octetos seguintes referem-se ao Host.
-Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a governos, instituições e até mesmo algumas empresas privadas, como por exemplo, a IBM.</description>
-    </item>
-    
-    <item>
-      <title>Tipos de arquivos no Linux</title>
-      <link>https://daniloarantes.com.br/post/tipos-de-arquivos-no-linux/</link>
-      <pubDate>Wed, 05 Jul 2017 11:06:12 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/tipos-de-arquivos-no-linux/</guid>
-      <description>&lt;p&gt;No linux, um arquivo pode se subdividir em um dos seguinte stipos:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Arquivos Comuns&lt;/li&gt;
-&lt;li&gt;Diretórios&lt;/li&gt;
-&lt;li&gt;Links&lt;/li&gt;
-&lt;li&gt;Device Files&lt;/li&gt;
-&lt;li&gt;Sockets&lt;/li&gt;
-&lt;li&gt;Pipes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Compiladores e Interpretadores</title>
-      <link>https://daniloarantes.com.br/post/compiladores-e-interpretadores/</link>
-      <pubDate>Tue, 27 Jun 2017 15:13:00 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/compiladores-e-interpretadores/</guid>
-      <description>A maneira de se comunicar com um computador chama-se programa e a única linguagem que o computador entende chama-se linguagem de máquina. Portanto todos os programas que se comunicam com a máquina devem estar em linguagem de máquina.
-A forma como os programas são traduzidos para a linguagem de máquina classifica-os em duas categorias:
-Interpretados Compilados Os programas que fazem estas traduções são chamados interpretadores e Compiladores.
-INTERPRETADORES Um interpretador lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro converte-a para linguagem de máquina para finalmente executá-la.</description>
-    </item>
-    
-    <item>
-      <title>O que é um Cluster de Computadores?</title>
-      <link>https://daniloarantes.com.br/post/cluster-de-computadores/</link>
-      <pubDate>Mon, 19 Jun 2017 21:26:58 +0000</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/cluster-de-computadores/</guid>
-      <description>Este é o trecho de um artigo meu sobre Redundância e Replicação de dados utilizando MySQL e MySQL Cluster. O desenvolvimento do artigo foi baseado em um cluster responsável pelo gerenciamento do banco de dados - em outro post falarei mais sobre esse trabalho com exemplo e aplicação prática.
-Cluster – Conceito Os clusters podem ser utilizados em diversas aplicações, como por exemplo, renderização de efeitos especiais, meteorologia, simulações, etc.</description>
-    </item>
-    
-    <item>
-      <title>Configurando o Automount (Autofs)</title>
-      <link>https://daniloarantes.com.br/post/autofs/</link>
-      <pubDate>Thu, 15 Jun 2017 19:32:42 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/autofs/</guid>
-      <description>A montagem automática é utilizada como um sistema de montagem sob demanda.
-Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.
-Inicialmente, instale o pacote autofs:
-apt-get install autofs Principal arquivo de configuração: /etc/auto.master
-Configurando automount: Edite o arquivo /etc/auto.master
-vim /etc/auto.master Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.</description>
-    </item>
-    
-    <item>
-      <title>Criando Arquivamentos com CPIO</title>
-      <link>https://daniloarantes.com.br/post/cpio/</link>
-      <pubDate>Thu, 15 Jun 2017 17:41:57 -0300</pubDate>
-      
-      <guid>https://daniloarantes.com.br/post/cpio/</guid>
-      <description>O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.
-Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.
-Com este comando, várias atividades são facilitadas, como por exemplo:
-Copiar arquivos para um arquivamento; Extrair arquivos de um arquivamento; Copiar arquivos para outra estrutura de diretórios. Alguns parâmetros utilizados com o CPIO:
--i - Extrair backup -o - Cria backup -t - Mostra o conteúdo do backup -F - Especifica o arquivo de Backup -d - Cria diretórios se necessário -v - Modo Verboso – Mostra na tela as ações -p - Ativa o modo de cópia Criando cenário para teste: Execute os comandos abaixo para criar o cenário que será utilizado para teste:</description>
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Danilo Arantes</title>
+		<link>https://daniloarantes.com.br/post/</link>
+		<description>Recent content on Danilo Arantes</description>
+		<generator>Hugo</generator>
+		<language>pt-BR</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 20 Jan 2021 19:32:42 -0300</lastBuildDate>
+		
+			<atom:link href="https://daniloarantes.com.br/post/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Gerenciamento da Rede e Configuração do Bonding | Aula 04</title>
+				<link>https://daniloarantes.com.br/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</link>
+				<pubDate>Wed, 20 Jan 2021 19:32:42 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</guid>
+				<description>&lt;p&gt;Olá pessoal!&lt;/p&gt;&#xA;&lt;p&gt;Nesta aula irei demonstrar inicialmente como realizar o gerenciamento básico da rede com o comando IP e também como configurar uma interface de rede com endereço estático.&lt;/p&gt;&#xA;&lt;p&gt;Também mostrarei como realizar a configuração do serviço &lt;strong&gt;bonding&lt;/strong&gt; para obter a redundância das interfaces de rede. Teremos duas placas de rede funcionando neste serviço e, caso a placa principal falhe, a placa secundária entrará em funcionamento.&lt;/p&gt;&#xA;&lt;p&gt;Bons estudos!&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/tEYL9-DU60g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Gerenciamento de RAID via software no Debian | Aula 03</title>
+				<link>https://daniloarantes.com.br/post/gerenciamento_de_raid_via_software/</link>
+				<pubDate>Wed, 13 Jan 2021 20:06:45 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/gerenciamento_de_raid_via_software/</guid>
+				<description>&lt;p&gt;Na segunda etapa da instalação do nosso servidor Debian, realizamos a configuração dos discos como RAID 1.&lt;/p&gt;&#xA;&lt;p&gt;Nesta aula vou demonstrar para vocês como realizar os testes de funcionamento do RAID via software, procedimentos necessários para gerenciar e manter este serviço funcionando.&lt;/p&gt;&#xA;&lt;h2 id=&#34;comandos-para-gerenciamento-do-raid-via-software&#34;&gt;Comandos para gerenciamento do RAID via software&lt;/h2&gt;&#xA;&lt;p&gt;Mostrarei somente alguns comandos necessários para este estudo. Sugiro que façam a leitura do manual do comando mdadm (no terminal digite man mdadm) para ver todas as possibilidades.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Instalação Comentada do Debian com Raid 1 | Aula 02</title>
+				<link>https://daniloarantes.com.br/post/instalacao-comentada-debian-raid1/</link>
+				<pubDate>Wed, 06 Jan 2021 10:30:54 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/instalacao-comentada-debian-raid1/</guid>
+				<description>&lt;p&gt;Nesta segunda aula iremos realizar a instalação do sistema GNU/Linux Debian de maneira comentada explicando todas as etapas de instalação.&lt;/p&gt;&#xA;&lt;p&gt;Este sistema será instalado utilizando RAID 1, onde teremos dois discos espelhados e sincronizados em tempo real proporcionando alta disponibilidade e segurança para os dados armazenados.&lt;/p&gt;&#xA;&lt;figure class=&#34;img-centro&#34;&gt;&lt;img src=&#34;https://daniloarantes.com.br/imagens/raid1.png&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;&lt;strong&gt;Saiba mais sobre RAID 1 neste link:&lt;/strong&gt;&#xA;&lt;a href=&#34;http://www.infortrendbrasil.com.br/tecnologia/raid-1/&#34;&gt;http://www.infortrendbrasil.com.br/tecnologia/raid-1/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Assista a gravação da aula e bons estudos!&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;&#x9;&#x9;&#x9;&lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/s3VOr_IGJWM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;&#x9;&#x9;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Criação Máquina Virtual no VirtualBox para instalação do Debian com RAID 1 | Aula 01</title>
+				<link>https://daniloarantes.com.br/post/vm-debian-raid-1/</link>
+				<pubDate>Sat, 02 Jan 2021 12:30:00 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/vm-debian-raid-1/</guid>
+				<description>&lt;p&gt;Começamos hoje com uma série de posts com objetivo de criar um servidor GNU/Linux com Debian.&lt;/p&gt;&#xA;&lt;p&gt;Nesta primeira etapa abordarei a criação da máquina virtual utilizando o VirtualBox. Ela será preparada para posteriormente instalarmos o sistema operacional com RAID 1, oferecendo um backup dos dados do nosso servidor.&lt;/p&gt;&#xA;&lt;p&gt;É importante salientar que este é um cenário de estudos que também pode ser implantado em um servidor real e as configurações mostradas são exemplos, podendo ser modificadas e aperfeiçoadas para várias necessidades.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Desabilitando o Bluetooth na inicialização do Debian</title>
+				<link>https://daniloarantes.com.br/post/desabilitar-bluetooth/</link>
+				<pubDate>Tue, 06 Mar 2018 11:02:07 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/desabilitar-bluetooth/</guid>
+				<description>&lt;p&gt;Geralmente os notebooks vem com bluetooth, que por um lado é bom mas por outro não. Manter o bluetooth ligado direto faz com que consuma muita bateria e não é isso o que queremos quando o assunto é notebook.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Para sistemas com SYSTEMD&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Se o seu sistema estiver utilizando SYSTEMD, o procedimento pode ser facilmente realizado seguindo as etapas abaixo:&lt;/p&gt;&#xA;&lt;p&gt;1º - Verificar o status do Bluetooth&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status bluetooth&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Serão retornadas mensagens sobre o status de funcionamento do serviço.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Atualizando Debian Stretch para Buster</title>
+				<link>https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/</link>
+				<pubDate>Mon, 23 Oct 2017 17:00:00 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/atualizando-debian-stretch-para-buster/</guid>
+				<description>&lt;p&gt;Este final de semana fiz a atualização do Debian Stretch que estava rodando no meu notebook para a versão testing, Debian Buster.&lt;/p&gt;&#xA;&lt;p&gt;Após realizar backup dos dados importantes, iniciei o processo de atualização que consiste em alterar os repositórios do sistema para a versão Buster.&lt;/p&gt;&#xA;&lt;p&gt;Para isso, utilizei o comando &lt;strong&gt;sed&lt;/strong&gt; para modificar a versão dos repositórios no arquivo &lt;strong&gt;/etc/apt/sources.list&lt;/strong&gt; :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; sed -i &lt;span style=&#34;color:#ba2121&#34;&gt;&amp;#39;s/Stretch/Buster/g&amp;#39;&lt;/span&gt; /etc/apt/sources.list&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Atenção:&lt;/strong&gt; você pode ter algum repositório que necessite permanecer na versão Stretch. Se executou o comando acima, acesse o arquivo sources.list com o editor de textos e modifique o que for necessário.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Correção de erro &#39;failed to register layer&#39; no Docker</title>
+				<link>https://daniloarantes.com.br/post/docker-failed-to-register-layer/</link>
+				<pubDate>Thu, 12 Oct 2017 18:02:42 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/docker-failed-to-register-layer/</guid>
+				<description>&lt;p&gt;&lt;img src=&#34;../../imagens/docker.png&#34; alt=&#34;Docker&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;O Docker é uma ferramenta incrível e não é a toa que está conquistando o mercado e crescendo rapidamente. Para mim ainda é uma novidade e sempre que posso estudo para aprender mais.&lt;/p&gt;&#xA;&lt;p&gt;Em uma das aventuras, ao tentar fazer o &lt;strong&gt;pull&lt;/strong&gt; de um container com Evernote, me deparei com a seguinte mensagem de erro:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;failed to register layer: symlink&amp;hellip;&amp;rdquo;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;E eu não conseguia finalizar o processo de forma alguma.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Um pouco sobre IPv4 e IPv6</title>
+				<link>https://daniloarantes.com.br/post/ipv4ipv6/</link>
+				<pubDate>Mon, 14 Aug 2017 14:32:42 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/ipv4ipv6/</guid>
+				<description>&lt;h2 id=&#34;ipv4&#34;&gt;&lt;strong&gt;IPv4&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;A dificuldade atual do IPv4 é a limitação dos endereços de IP. O grande problema é que os endereços são sempre divididos em duas partes: Rede e Host.&lt;/p&gt;&#xA;&lt;p&gt;Nos endereços de classe A, o primeiro octeto se refere à Rede e os três octetos seguintes referem-se ao Host.&lt;/p&gt;&#xA;&lt;p&gt;Temos apenas 126 faixas de endereços classe A disponíveis no mundo, dadas a governos, instituições e até mesmo algumas empresas privadas, como por exemplo, a IBM.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Tipos de arquivos no Linux</title>
+				<link>https://daniloarantes.com.br/post/tipos-de-arquivos-no-linux/</link>
+				<pubDate>Wed, 05 Jul 2017 11:06:12 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/tipos-de-arquivos-no-linux/</guid>
+				<description>&lt;p&gt;No linux, um arquivo pode se subdividir em um dos seguinte stipos:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arquivos Comuns&lt;/li&gt;&#xA;&lt;li&gt;Diretórios&lt;/li&gt;&#xA;&lt;li&gt;Links&lt;/li&gt;&#xA;&lt;li&gt;Device Files&lt;/li&gt;&#xA;&lt;li&gt;Sockets&lt;/li&gt;&#xA;&lt;li&gt;Pipes&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ok, mas o que é cada um desses tipos? Abaixo segue uma breve explicação sobre eles:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Compiladores e Interpretadores</title>
+				<link>https://daniloarantes.com.br/post/compiladores-e-interpretadores/</link>
+				<pubDate>Tue, 27 Jun 2017 15:13:00 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/compiladores-e-interpretadores/</guid>
+				<description>&lt;p&gt;A maneira de se comunicar com um computador chama-se programa e a única linguagem que o computador entende chama-se &lt;em&gt;linguagem de máquina&lt;/em&gt;. Portanto todos os programas que se comunicam com a máquina devem estar em linguagem de máquina.&lt;/p&gt;&#xA;&lt;p&gt;A forma como os programas são traduzidos para a linguagem de máquina classifica-os em duas categorias:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Interpretados&lt;/li&gt;&#xA;&lt;li&gt;Compilados&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Os programas que fazem estas traduções são chamados &lt;em&gt;interpretadores&lt;/em&gt; e &lt;em&gt;Compiladores&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;interpretadores&#34;&gt;&lt;strong&gt;INTERPRETADORES&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Um interpretador lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro converte-a para linguagem de máquina para finalmente executá-la. Segue, então, para a próxima instrução, repetindo o processo até que a última instrução seja executada ou a consistência aponte algum erro.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>O que é um Cluster de Computadores?</title>
+				<link>https://daniloarantes.com.br/post/cluster-de-computadores/</link>
+				<pubDate>Mon, 19 Jun 2017 21:26:58 +0000</pubDate>
+				<guid>https://daniloarantes.com.br/post/cluster-de-computadores/</guid>
+				<description>&lt;p&gt;Este é o trecho de um artigo meu sobre Redundância e Replicação de dados utilizando MySQL e MySQL Cluster. O desenvolvimento do artigo foi baseado em um cluster responsável pelo gerenciamento do banco de dados - em outro post falarei mais sobre esse trabalho com exemplo e aplicação prática.&lt;/p&gt;&#xA;&lt;h2 id=&#34;cluster-8211-conceito&#34;&gt;&lt;strong&gt;Cluster – Conceito&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Os clusters podem ser utilizados em diversas aplicações, como por exemplo, renderização de efeitos especiais, meteorologia, simulações, etc.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Configurando o Automount (Autofs)</title>
+				<link>https://daniloarantes.com.br/post/autofs/</link>
+				<pubDate>Thu, 15 Jun 2017 19:32:42 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/autofs/</guid>
+				<description>&lt;p&gt;A montagem automática é utilizada como um sistema de montagem sob demanda.&lt;/p&gt;&#xA;&lt;p&gt;Imagine que toda vez que um usuário acessar um diretório específico, o compartilhamento remoto seja montado, disponibilizando acesso a um servidor de arquivos, por exemplo.&lt;/p&gt;&#xA;&lt;p&gt;Inicialmente, instale o pacote autofs:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install autofs&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Principal arquivo de configuração: &lt;strong&gt;/etc/auto.master&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;configurando-automount&#34;&gt;&lt;strong&gt;Configurando automount:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Edite o arquivo /etc/auto.master&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim /etc/auto.master&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Dentro desse arquivo, verifique se a linha +dir está descomentada. Caso essa linha não exista, retire o comentário da linha Include.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Criando Arquivamentos com CPIO</title>
+				<link>https://daniloarantes.com.br/post/cpio/</link>
+				<pubDate>Thu, 15 Jun 2017 17:41:57 -0300</pubDate>
+				<guid>https://daniloarantes.com.br/post/cpio/</guid>
+				<description>&lt;p&gt;O comando CPIO utiliza uma lista de arquivos da saída padrão para criar um arquivamento, enviando estes para a saída padrão.&lt;/p&gt;&#xA;&lt;p&gt;Vale lembrar que o CPIO apenas criar arquivamentos e não os compacta.&lt;/p&gt;&#xA;&lt;p&gt;Com este comando, várias atividades são facilitadas, como por exemplo:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Copiar arquivos para um arquivamento;&lt;/li&gt;&#xA;&lt;li&gt;Extrair arquivos de um arquivamento;&lt;/li&gt;&#xA;&lt;li&gt;Copiar arquivos para outra estrutura de diretórios.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Alguns parâmetros utilizados com o CPIO:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;-i&lt;/strong&gt; - Extrair backup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-o&lt;/strong&gt; - Cria backup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-t&lt;/strong&gt; - Mostra o conteúdo do backup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-F&lt;/strong&gt; - Especifica o arquivo de Backup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-d&lt;/strong&gt; - Cria diretórios se necessário&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-v&lt;/strong&gt; - Modo Verboso – Mostra na tela as ações&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;-p&lt;/strong&gt; - Ativa o modo de cópia&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;criando-cenário-para-teste&#34;&gt;&lt;strong&gt;Criando cenário para teste:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Execute os comandos abaixo para criar o cenário que será utilizado para teste:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

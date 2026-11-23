@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://daniloarantes.com.br/</loc>
+    <lastmod>2023-06-25T19:24:00-03:00</lastmod>
+  </url><url>
     <loc>https://daniloarantes.com.br/sobre/</loc>
     <lastmod>2023-06-25T19:24:00-03:00</lastmod>
   </url><url>
     <loc>https://daniloarantes.com.br/post/</loc>
-    <lastmod>2021-01-20T19:32:42-03:00</lastmod>
-  </url><url>
-    <loc>https://daniloarantes.com.br/</loc>
     <lastmod>2021-01-20T19:32:42-03:00</lastmod>
   </url><url>
     <loc>https://daniloarantes.com.br/post/gerenciamento-de-rede-e-configura%C3%A7%C3%A3o-do-bonding/</loc>
